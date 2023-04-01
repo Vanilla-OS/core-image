@@ -1,0 +1,6 @@
+Types: deb
+URIs: http://repo.vanillaos.org/
+Suites: sid
+Architectures: amd64
+Components: main
+Signed-By: /usr/share/keyrings/vanilla_keyring.gpg

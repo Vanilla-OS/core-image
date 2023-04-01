@@ -18,8 +18,7 @@ RUN rm -f /etc/apt/sources.list.d/debian.sources
 # Add base system files
 ADD includes.container /
 
-# Add Vanilla OS keys
-RUN apt-key add /tmp/bucket/vanilla-main.key
+# Add Vanilla OS Extra Packages key
 RUN apt-key add /tmp/bucket/vanilla.key
 
 # Install packages
