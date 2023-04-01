@@ -7,5 +7,5 @@ Containerfile for building a vanilla OS Core image.
 ## Build
 
 ```bash
-podman build -t vanillaos/core .
+podman image build -t vanillaos/core .
 ```

@@ -2,6 +2,7 @@ FROM debian:sid-slim
 LABEL maintainer="Vanilla OS Contributors"
 
 ARG DEBIAN_FRONTEND=noninteractive
+RUN echo 'APT::Install-Recommends "0";' > /etc/apt/apt.conf.d/01norecommends
 
 # Copy bucket in /tmp
 COPY bucket /tmp/bucket
