@@ -23,6 +23,9 @@ RUN apt-key add /tmp/bucket/vanilla-main.key
 RUN apt-key add /tmp/bucket/vanilla.key
 
 # Install packages
+# Note: we need to perform a full update before installing packages
+#       to ensure that the vanilla version replaces the debian one
 RUN apt-get update && \
+    apt-get upgrade -y && \
     apt-get install -y $(cat /tmp/bucket/install.packages) && \
     apt-get clean
