@@ -24,3 +24,4 @@ jobs:
         registry: ${{ secrets.NEXUS_REGISTRY }}
         username: ${{ secrets.NEXUS_USER }}
         password: ${{ secrets.NEXUS_PSW }}
+        tls-verify: false
