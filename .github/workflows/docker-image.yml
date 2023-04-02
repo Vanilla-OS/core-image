@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker image build -f Containerfile --tag vanillaos/core:${{ github.ref_name }}
+      run: docker image build -f Containerfile --tag vanillaos/core:${{ github.ref_name }} .
     - name: Push To Registry
       uses: redhat-actions/push-to-registry@v2.7
       with:
