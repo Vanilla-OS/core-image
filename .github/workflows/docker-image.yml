@@ -1,0 +1,26 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker image build --tag vanillaos/core:${{ github.ref_name }} .
+    - name: Push To Registry
+      uses: redhat-actions/push-to-registry@v2.7
+      with:
+        image: vanillaos/core
+        tags: ${{ github.ref_name }}
+        registry: ${{ secrets.NEXUS_REGISTRY }}
+        username: ${{ secrets.NEXUS_USER }}
+        password: ${{ secrets.NEXUS_PSW }}
