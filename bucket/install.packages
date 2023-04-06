@@ -21,3 +21,5 @@ shim-helpers-amd64-signed
 
 linux-image-amd64
 linux-headers-amd64
+
+systemd-sysv
