@@ -10,6 +10,7 @@ intel-microcode
 iucode-tool
 setserial
 user-setup
+console-setup
 
 efibootmgr
 grub-efi-amd64
