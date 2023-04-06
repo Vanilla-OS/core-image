@@ -25,3 +25,7 @@ linux-headers-amd64
 systemd-sysv
 sudo
 zstd
+
+manpages
+manpages-dev
+manpages-posix
