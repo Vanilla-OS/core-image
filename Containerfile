@@ -4,6 +4,16 @@ LABEL maintainer="Vanilla OS Contributors"
 ARG DEBIAN_FRONTEND=noninteractive
 RUN echo 'APT::Install-Recommends "0";' > /etc/apt/apt.conf.d/01norecommends
 
+# Docker images of Debian have rules that remove manpages and other files which may not be useful
+# for containers, but remove these rules because we're building a desktop system.
+RUN rm /etc/dpkg/dpkg.cfg.d/*
+# Reinstall all currently installed packages in order to get the man pages back
+RUN apt-get update && \
+    dpkg -l | grep ^ii | cut -d' ' -f3 | xargs apt-get install -y --reinstall && \
+    rm -r /var/lib/apt/lists/*
+# Re-generate mandb just to be sure
+RUN mandb -c
+
 # Copy bucket in /tmp
 COPY bucket /tmp/bucket
 
