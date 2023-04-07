@@ -25,6 +25,8 @@ linux-headers-amd64
 systemd-sysv
 sudo
 zstd
+less
+dialog
 
 manpages
 manpages-dev
