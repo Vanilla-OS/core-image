@@ -11,6 +11,7 @@ iucode-tool
 setserial
 user-setup
 console-setup
+rsync
 
 efibootmgr
 grub-efi-amd64
