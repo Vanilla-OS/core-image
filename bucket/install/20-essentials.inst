@@ -1,5 +1,3 @@
-ca-certificates
-locales
 setserial
 systemd-sysv
 
@@ -7,8 +5,14 @@ user-setup
 console-setup
 
 sudo
-zstd
-less
-dialog
-rsync
-zstd
+acpi
+policykit-1
+
+bc
+pcmciautils
+samba-common-bin
+
+ibus
+ibus-table
+
+laptop-detect

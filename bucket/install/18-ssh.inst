@@ -1,0 +1,8 @@
+gpg
+gpg-agent
+dirmngr
+
+ca-certificates
+
+openssh-server
+spice-vdagent
