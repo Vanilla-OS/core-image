@@ -9,7 +9,7 @@ network-manager-pptp
 network-manager-ssh
 network-manager-sstp
 network-manager-strongswan
-network-manager-vpn
+network-manager-vpnc
 
 modemmanager
 wpasupplicant
