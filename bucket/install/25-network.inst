@@ -24,3 +24,5 @@ bluez
 libspa-0.2-bluetooth
 libnss-mdns
 libproxy1-plugin-networkmanager
+
+ntp
