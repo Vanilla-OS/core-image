@@ -7,3 +7,4 @@ curl
 tracker
 bash-completion
 anacron
+libnss-myhostname
