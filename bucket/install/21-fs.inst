@@ -2,6 +2,7 @@ memtest86+
 
 exfatprogs
 btrfs-progs
+dosfstools
 gvfs-backends
 
 ntfs-3g

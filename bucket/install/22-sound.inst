@@ -1,11 +1,7 @@
-pulseaudio
-pulseaudio-module-bluetooth
-
-libcanberra-pulse
 pipewire-pulse
+pipewire-alsa
 
 wireplumber
 
-alsa-oss
 alsa-utils
 alsa-firmware-loaders
