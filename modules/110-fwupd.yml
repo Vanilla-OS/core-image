@@ -1,0 +1,7 @@
+name: fwupd
+type: apt
+source:
+  packages:
+  - fwupd
+  - fwupd-amd64-signed
+  

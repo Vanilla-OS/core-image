@@ -1,0 +1,41 @@
+base: debian:sid-slim
+name: Vanilla Core
+labels:
+  maintainer: Vanilla OS Contributors
+args:
+  DEBIAN_FRONTEND: noninteractive
+runs:
+- echo 'APT::Install-Recommends "0";' > /etc/apt/apt.conf.d/01norecommends
+
+modules:
+- name: init-setup
+  type: shell
+  commands:
+  - rm /etc/dpkg/dpkg.cfg.d/*
+  - dpkg -l | grep ^ii | cut -d' ' -f3 | xargs apt-get install -y --reinstall
+  - rm -r /var/lib/apt/lists/*
+  - mandb -c
+  - rm -rf /etc/apt/sources.list.d
+  - mv /etc/apt/sources.list.d.new /etc/apt/sources.list.d
+  - ls /etc/apt/sources.list.d
+  - apt-key add /vanilla.key
+  - apt update && apt upgrade -y
+  modules:
+  - name: apt-essentials
+    type: apt
+    source:
+      packages:
+        - apt-utils
+        - apt-transport-https
+        - ca-certificates
+        - man-db
+        - gnupg2
+    modules:
+    - name: apt-update
+      type: shell
+      commands:
+      - apt update
+
+- name: packages-modules
+  type: gen-modules
+  path: modules

@@ -1,0 +1,8 @@
+name: input-and-locale
+type: apt
+source:
+  packages:
+  - locales
+  - xkb-data
+  - im-config
+  

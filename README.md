@@ -6,7 +6,9 @@ Containerfile for building a vanilla OS Core image.
 
 ## Build
 
+You need the [Vib](https://github.com/vanilla-os/Vib) tool to generate the Containerfile.
+
 ```bash
-sh prepare.sh
+vib build recipe.yml
 podman image build -t vanillaos/core .
 ```

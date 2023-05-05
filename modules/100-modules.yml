@@ -1,0 +1,17 @@
+name: modules
+type: apt
+source:
+  packages:
+  - dkms
+  - bolt
+  - inputattach
+  - b43-fwcutter
+  - firmware-b43-installer
+  - firmware-brcm80211
+  - firmware-sof-signed
+  - intel-microcode
+  - iucode-tool
+  - cryptsetup-initramfs
+  - acpi-call-dkms
+  - libsasl2-modules
+  

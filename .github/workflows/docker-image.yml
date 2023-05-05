@@ -13,8 +13,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Prepare
-      run: sh prepare.sh
+    - name: Vib
+      run: |
+        wget https://github.com/Vanilla-OS/Vib/releases/download/v0.2.1/vib
+        chmod +x vib
+        ./vib build recipe.yml
 
     - name: Build the Docker image
       run: docker image build -f Containerfile --tag vanillaos/core:${{ github.ref_name }} .

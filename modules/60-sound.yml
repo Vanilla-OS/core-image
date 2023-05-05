@@ -1,0 +1,9 @@
+name: sound
+type: apt
+source:
+  packages:
+  - pipewire-pulse
+  - pipewire-alsa
+  - wireplumber
+  - alsa-utils
+  - alsa-firmware-loaders
