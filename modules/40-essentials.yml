@@ -15,3 +15,9 @@ source:
   - ibus
   - ibus-table
   - laptop-detect
+  - efibootmgr
+  - grub-efi-amd64
+  - grub-efi-amd64-bin
+  - grub-efi-amd64-signed
+  - shim-signed
+  - shim-helpers-amd64-signed

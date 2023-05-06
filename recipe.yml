@@ -1,6 +1,6 @@
 base: debian:sid-slim
 name: Vanilla Core
-singlelayer: true
+singlelayer: false
 labels:
   maintainer: Vanilla OS Contributors
 args:
