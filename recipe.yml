@@ -64,5 +64,6 @@ modules:
 - name: cleanup
   type: shell
   commands:
-  - apt remove build-essential libbtrfs-dev libdevmapper-dev libgpgme-dev golang-go pkg-config -y
+  - apt remove build-essential golang-1.19-src -y
+  - apt autoremove -y
   - apt clean
