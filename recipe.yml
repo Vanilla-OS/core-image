@@ -36,6 +36,27 @@ modules:
       commands:
       - apt update
 
+- name: abroot
+  type: go
+  buildvars:
+    GO_OUTPUT_BIN: /usr/bin/abrootv2
+  source:
+    type: git
+    branch: 2.0-oci-support
+    url: https://github.com/Vanilla-OS/ABRoot.git
+    commit: f1b5b897b2a177c76f66c7d2ead643707385ea79
+  modules:
+  - name: abroot-deps
+    type: apt
+    source:
+      packages:
+        - pkg-config
+        - build-essential
+        - golang-go
+        - libbtrfs-dev
+        - libdevmapper-dev
+        - libgpgme-dev
+
 - name: packages-modules
   type: gen-modules
   path: modules

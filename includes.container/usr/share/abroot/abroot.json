@@ -1,0 +1,19 @@
+{
+    "autoRepair": true,
+    
+    "registry": "registry.vanillaos.org",
+    "registryAPIVersion": "v2",
+    "name": "vanillaos/desktop",
+    "tag": "main",
+    
+    "iPkgMngAdd": "apt install -y",
+    "iPkgMngRm": "apt remove -y",
+
+    "partLabelVar": "vanillaos-var",
+    "partLabelA": "vanillaos-a",
+    "partLabelB": "vanillaos-b",
+    "partLabelBoot": "vanillaos-boot",
+    "partLabelEfi": "vanillaos-efi",
+
+    "libPathStates": "/var/lib/abroot/states"
+}
