@@ -30,6 +30,7 @@ modules:
         - ca-certificates
         - man-db
         - gnupg2
+        - build-essential
     modules:
     - name: apt-update
       type: shell
@@ -51,7 +52,6 @@ modules:
     source:
       packages:
         - pkg-config
-        - build-essential
         - golang-go
         - libbtrfs-dev
         - libdevmapper-dev
@@ -60,3 +60,9 @@ modules:
 - name: packages-modules
   type: gen-modules
   path: modules
+
+- name: cleanup
+  type: shell
+  commands:
+  - apt remove build-essential libbtrfs-dev libdevmapper-dev libgpgme-dev golang-go pkg-config -y
+  - apt clean
