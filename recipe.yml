@@ -21,6 +21,7 @@ modules:
   - ls /etc/apt/sources.list.d
   - apt-key add /vanilla.key
   - apt update && apt upgrade -y
+  - apt install --reinstall $(dpkg --get-selections | awk '{if ($2=="install") print $1}')
   modules:
   - name: apt-essentials
     type: apt
