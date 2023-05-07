@@ -17,26 +17,16 @@ modules:
   - mandb -c
   
 - name: abroot
-  type: go # only during development, switch to the tar module for production
-  buildvars:
-    GO_OUTPUT_BIN: /usr/bin/abrootv2
+  type: shell
   source:
-    type: git
-    branch: 2.0-oci-support
-    url: https://github.com/Vanilla-OS/ABRoot.git
-    commit: 109c001b70c066590fcd9bfaaa4d8591f11e9334
-  modules:
-  - name: abroot-deps # remove this module in production
-    type: apt
-    source:
-      packages:
-        - pkg-config
-        - golang-go
-        - libbtrfs-dev
-        - libdevmapper-dev
-        - libgpgme-dev
-        - build-essential
-
+    type: tar
+    # switch to production build once in production
+    url: https://github.com/Vanilla-OS/ABRoot/releases/download/continuous/abrootv2.tar.gz
+  commands:
+  - mkdir -p /usr/bin
+  - cp /sources/abrootv2 /usr/bin/abrootv2
+  - chmod +x /usr/bin/abrootv2
+  
 - name: packages-modules
   type: gen-modules
   path: modules
@@ -44,6 +34,5 @@ modules:
 - name: cleanup
   type: shell
   commands:
-  - apt remove build-essential golang-1.19-src pkg-config libbtrfs-dev libdevmapper-dev libgpgme-dev -y # remove this line in production
   - apt autoremove -y
   - apt clean
