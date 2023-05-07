@@ -13,15 +13,16 @@ modules:
   type: shell
   commands:
   - rm /etc/dpkg/dpkg.cfg.d/*
-  - dpkg -l | grep ^ii | cut -d' ' -f3 | xargs apt-get install -y --reinstall
+  # - dpkg -l | grep ^ii | cut -d' ' -f3 | xargs apt-get install -y --reinstall
   - rm -r /var/lib/apt/lists/*
-  - mandb -c
+  # - mandb -c
   - rm -rf /etc/apt/sources.list.d
   - mv /etc/apt/sources.list.d.new /etc/apt/sources.list.d
   - ls /etc/apt/sources.list.d
   - apt-key add /vanilla.key
-  - apt update && apt upgrade -y
-  - apt install --reinstall $(dpkg --get-selections | awk '{if ($2=="install") print $1}')
+  - apt update
+  - apt install --reinstall -y $(dpkg --get-selections | awk '{if ($2=="install") print $1}')
+  - mandb -c
   modules:
   - name: apt-essentials
     type: apt
