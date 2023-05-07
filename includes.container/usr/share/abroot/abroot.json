@@ -1,5 +1,6 @@
 {
     "autoRepair": true,
+    "maxParallelDownloads": 2,
     
     "registry": "registry.vanillaos.org",
     "registryAPIVersion": "v2",

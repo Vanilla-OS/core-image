@@ -46,7 +46,7 @@ modules:
     type: git
     branch: 2.0-oci-support
     url: https://github.com/Vanilla-OS/ABRoot.git
-    commit: f1b5b897b2a177c76f66c7d2ead643707385ea79
+    commit: 109c001b70c066590fcd9bfaaa4d8591f11e9334
   modules:
   - name: abroot-deps
     type: apt
