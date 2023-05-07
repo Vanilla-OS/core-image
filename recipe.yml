@@ -1,4 +1,4 @@
-base: debian:sid-slim
+base: registry.vanillaos.org/vanillaos/pico:main
 name: Vanilla Core
 singlelayer: false
 labels:
@@ -9,39 +9,8 @@ runs:
 - echo 'APT::Install-Recommends "0";' > /etc/apt/apt.conf.d/01norecommends
 
 modules:
-- name: init-setup
-  type: shell
-  commands:
-  - rm /etc/dpkg/dpkg.cfg.d/*
-  # - dpkg -l | grep ^ii | cut -d' ' -f3 | xargs apt-get install -y --reinstall
-  - rm -r /var/lib/apt/lists/*
-  # - mandb -c
-  - rm -rf /etc/apt/sources.list.d
-  - mv /etc/apt/sources.list.d.new /etc/apt/sources.list.d
-  - ls /etc/apt/sources.list.d
-  - apt-key add /vanilla.key
-  - apt update
-  - apt install --reinstall -y $(dpkg --get-selections | awk '{if ($2=="install") print $1}')
-  - mandb -c
-  modules:
-  - name: apt-essentials
-    type: apt
-    source:
-      packages:
-        - apt-utils
-        - apt-transport-https
-        - ca-certificates
-        - man-db
-        - gnupg2
-        - build-essential
-    modules:
-    - name: apt-update
-      type: shell
-      commands:
-      - apt update
-
 - name: abroot
-  type: go
+  type: go # only during development, switch to the tar module for production
   buildvars:
     GO_OUTPUT_BIN: /usr/bin/abrootv2
   source:
@@ -50,7 +19,7 @@ modules:
     url: https://github.com/Vanilla-OS/ABRoot.git
     commit: 109c001b70c066590fcd9bfaaa4d8591f11e9334
   modules:
-  - name: abroot-deps
+  - name: abroot-deps # remove this module in production
     type: apt
     source:
       packages:
@@ -59,14 +28,21 @@ modules:
         - libbtrfs-dev
         - libdevmapper-dev
         - libgpgme-dev
+        - build-essential
 
 - name: packages-modules
   type: gen-modules
   path: modules
 
+- name: mandb
+  type: shell
+  commands:
+  - apt install -y man-db
+  - mandb -c
+
 - name: cleanup
   type: shell
   commands:
-  - apt remove build-essential golang-1.19-src -y
+  - apt remove build-essential golang-1.19-src -y # remove this line in production
   - apt autoremove -y
   - apt clean
