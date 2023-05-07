@@ -12,3 +12,4 @@ You need the [Vib](https://github.com/vanilla-os/Vib) tool to generate the Conta
 vib build recipe.yml
 podman image build -t vanillaos/core .
 ```
+
