@@ -10,5 +10,4 @@ source:
   - curl
   - tracker
   - bash-completion
-  - anacron
   - libnss-myhostname
