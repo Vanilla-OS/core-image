@@ -9,6 +9,13 @@ runs:
 - echo 'APT::Install-Recommends "0";' > /etc/apt/apt.conf.d/01norecommends
 
 modules:
+- name: mandb
+  type: shell
+  commands:
+  - apt update
+  - apt install -y man-db
+  - mandb -c
+  
 - name: abroot
   type: go # only during development, switch to the tar module for production
   buildvars:
@@ -33,12 +40,6 @@ modules:
 - name: packages-modules
   type: gen-modules
   path: modules
-
-- name: mandb
-  type: shell
-  commands:
-  - apt install -y man-db
-  - mandb -c
 
 - name: cleanup
   type: shell
