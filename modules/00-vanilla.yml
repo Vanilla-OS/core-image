@@ -4,6 +4,5 @@ source:
   packages:
   - base-files
   - apx
-  - abroot
   - ikaros
   
