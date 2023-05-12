@@ -27,6 +27,17 @@ modules:
   - cp /sources/abrootv2 /usr/bin/abrootv2
   - chmod +x /usr/bin/abrootv2
   
+- name: ikaros
+  type: shell
+  source:
+    type: tar
+    # switch to production build once in production
+    url: https://github.com/Vanilla-OS/Ikaros/releases/download/continuous/ikaros.tar.gz
+  commands:
+  - mkdir -p /usr/bin
+  - cp /sources/ikaros /usr/bin/ikaros
+  - chmod +x /usr/bin/ikaros
+  
 - name: packages-modules
   type: gen-modules
   path: modules
