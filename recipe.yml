@@ -36,3 +36,6 @@ modules:
   commands:
   - apt autoremove -y
   - apt clean
+  - rm -rf /var/cache/*
+  - rm -rf /tmp/*
+  - mkdir -p /var/cache/apt/archives/partial
