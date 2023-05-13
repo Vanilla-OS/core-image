@@ -25,7 +25,7 @@ modules:
   commands:
   - mkdir -p /usr/bin
   - cp /sources/abrootv2 /usr/bin/abroot
-  - chmod +x /usr/bin/abrootv2
+  - chmod +x /usr/bin/abroot
 
 - name: ikaros
   type: shell
