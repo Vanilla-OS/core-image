@@ -15,7 +15,7 @@ modules:
   - apt update
   - apt install -y man-db
   - mandb -c
-  
+
 - name: abroot
   type: shell
   source:
@@ -24,9 +24,9 @@ modules:
     url: https://github.com/Vanilla-OS/ABRoot/releases/download/continuous/abrootv2.tar.gz
   commands:
   - mkdir -p /usr/bin
-  - cp /sources/abrootv2 /usr/bin/abrootv2
+  - cp /sources/abrootv2 /usr/bin/abroot
   - chmod +x /usr/bin/abrootv2
-  
+
 - name: ikaros
   type: shell
   source:
@@ -37,7 +37,7 @@ modules:
   - mkdir -p /usr/bin
   - cp /sources/ikaros /usr/bin/ikaros
   - chmod +x /usr/bin/ikaros
-  
+
 - name: packages-modules
   type: gen-modules
   path: modules
@@ -52,4 +52,4 @@ modules:
   - rm -rf /var/tmp/*
   - rm -rf /sources
   - mkdir -p /var/cache/apt/archives/partial
-  
+
