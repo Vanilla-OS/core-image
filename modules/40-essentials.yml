@@ -21,3 +21,4 @@ source:
   - grub-efi-amd64-signed
   - shim-signed
   - shim-helpers-amd64-signed
+  - uidmap
