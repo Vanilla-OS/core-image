@@ -36,8 +36,8 @@ modules:
     branch: main
     commit: efbf5c6937a93c10f7cf2c158682ff0d98f56d6d
   commands:
-  - sh -c "cd /sources/FsGuard && go build"
-  - mv /sources/FsGuard/FsGuard /usr/bin
+  - sh -c "cd /sources/fsguard && go build"
+  - mv /sources/fsguard/FsGuard /usr/bin
   - /usr/bin/gen_fsguard_filelist /usr/bin
   - /usr/bin/sign_filelist
   - rm /usr/bin/gen_fsguard_filelist
