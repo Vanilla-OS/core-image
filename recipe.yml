@@ -37,7 +37,7 @@ modules:
   commands:
   - sh -c "cd /sources/FsGuard && go build"
   - mv /sources/FsGuard/FsGuard /usr/bin
-  - /usr/bin/gen_fsguard_filelist
+  - /usr/bin/gen_fsguard_filelist /usr/bin
   - /usr/bin/sign_filelist
   - rm /usr/bin/gen_fsguard_filelist
   - rm /usr/bin/sign_filelist
