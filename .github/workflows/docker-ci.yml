@@ -20,4 +20,4 @@ jobs:
         ./vib build recipe.yml
 
     - name: Build the Docker image
-      run: docker image build -f Containerfile --tag vanillaos/core:${{ github.ref_name }} .
+      run: docker image build -f Containerfile --tag vanillaos/core:validation .
