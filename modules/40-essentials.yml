@@ -22,3 +22,4 @@ source:
   - shim-signed
   - shim-helpers-amd64-signed
   - uidmap
+  - minisign

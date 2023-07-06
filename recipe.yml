@@ -27,6 +27,21 @@ modules:
   - cp /sources/abrootv2 /usr/bin/abroot
   - chmod +x /usr/bin/abroot
 
+- name: fsguard
+  type: shell
+  source:
+    # TODO: Switch to tar once we have stable builds
+    type: git
+    url: https://github.com/linux-immutability-tools/FsGuard.git
+    branch: main
+  commands:
+  - sh -c "cd /sources/FsGuard && go build"
+  - mv /sources/FsGuard/FsGuard /usr/bin
+  - /usr/bin/gen_fsguard_filelist
+  - /usr/bin/sign_filelist
+  - rm /usr/bin/gen_fsguard_filelist
+  - rm /usr/bin/sign_filelist
+
 - name: ikaros
   type: shell
   source:
