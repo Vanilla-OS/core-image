@@ -34,6 +34,7 @@ modules:
     type: git
     url: https://github.com/linux-immutability-tools/FsGuard.git
     branch: main
+    commit: efbf5c6937a93c10f7cf2c158682ff0d98f56d6d
   commands:
   - sh -c "cd /sources/FsGuard && go build"
   - mv /sources/FsGuard/FsGuard /usr/bin
