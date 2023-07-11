@@ -30,14 +30,10 @@ modules:
 - name: fsguard
   type: shell
   source:
-    # TODO: Switch to tar once we have stable builds
-    type: git
-    url: https://github.com/linux-immutability-tools/FsGuard.git
-    branch: main
-    commit: efbf5c6937a93c10f7cf2c158682ff0d98f56d6d
+    type: tar
+    url: https://github.com/linux-immutability-tools/FsGuard/releases/download/v0.1.0/FsGuard_0.1.0_linux_amd64.tar.gz
   commands:
-  - sh -c "cd /sources/fsguard && go build"
-  - mv /sources/fsguard/FsGuard /usr/bin
+  - mv /sources/FsGuard_0.1.0_linux_amd64/FsGuard /usr/bin
   - /usr/bin/gen_fsguard_filelist /usr/bin
   - /usr/bin/sign_filelist
   - rm /usr/bin/gen_fsguard_filelist
