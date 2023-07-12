@@ -1,6 +1,6 @@
 #!/bin/sh
 
-minisign -G
+minisign -WG
 minisign -Sm /FsGuard/filelist
 
 touch /FsGuard/signature
