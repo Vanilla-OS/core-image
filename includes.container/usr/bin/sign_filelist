@@ -2,6 +2,7 @@
 
 minisign -WG
 minisign -Sm /FsGuard/filelist
+mv filelist.minisign /FsGuard
 
 touch /FsGuard/signature
 echo -e "----begin attach----" >> /FsGuard/signature
