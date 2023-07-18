@@ -36,6 +36,8 @@ modules:
   - apt install -y minisign
   - mv /sources/FsGuard /usr/bin
   - /usr/bin/gen_fsguard_filelist /usr/bin
+  - sed -i '\/usr\/bin\/gen_fsguard_filelist.*/d' /FsGuard/filelist
+  - sed -i '\/usr\/bin\/sign_filelist.*/d' /FsGuard/filelist
   - /usr/bin/sign_filelist
   - rm /usr/bin/gen_fsguard_filelist
   - rm /usr/bin/sign_filelist
