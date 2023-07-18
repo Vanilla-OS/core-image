@@ -2,12 +2,12 @@
 
 minisign -WG
 minisign -Sm /FsGuard/filelist
-mv filelist.minisign /FsGuard
+mv filelist.minisig /FsGuard
 
 touch /FsGuard/signature
-echo -e "----begin attach----" >> /FsGuard/signature
-cat /FsGuard/filelist.minisign >> /FsGuard/signature
-echo -e "----begin second attach----" >> /FsGuard/signature
+echo "----begin attach----" >> /FsGuard/signature
+cat /FsGuard/filelist.minisig >> /FsGuard/signature
+echo "----begin second attach----" >> /FsGuard/signature
 cat ./minisign.pub >> /FsGuard/signature
 
 cat /FsGuard/signature >> /usr/bin/FsGuard
