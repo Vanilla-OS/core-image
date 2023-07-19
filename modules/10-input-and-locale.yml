@@ -5,4 +5,4 @@ source:
   - locales
   - xkb-data
   - im-config
-  
+  - console-setup
