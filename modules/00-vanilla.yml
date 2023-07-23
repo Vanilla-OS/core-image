@@ -4,4 +4,4 @@ source:
   packages:
   - base-files
   - apx
-
+  - vanilla-first-setup
