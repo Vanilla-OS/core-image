@@ -49,7 +49,7 @@ modules:
   - cp /sources/apx /usr/bin/apx
   - chmod +x /usr/bin/apx
   - |
-    echo $'{\n\
+    echo '{\n\
       "apxPath": "/usr/share/apx",\n\
       "distroboxpath": "/usr/share/apx/distrobox",\n\
       "storageDriver": "btrfs"\n\
