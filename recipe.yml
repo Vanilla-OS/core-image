@@ -52,7 +52,7 @@ modules:
   - |
     echo '{\n\
       "apxPath": "/usr/share/apx",\n\
-      "distroboxpath": "/usr/share/apx/distrobox",\n\
+      "distroboxpath": "/usr/share/apx/distrobox/distrobox",\n\
       "storageDriver": "btrfs"\n\
     }' > /usr/share/apx/apx.json
 
