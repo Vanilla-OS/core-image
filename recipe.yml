@@ -35,8 +35,8 @@ modules:
     url: https://github.com/89luca89/distrobox/archive/refs/tags/1.5.0.2.tar.gz
   commands:
   - mkdir -p /usr/share/apx
-  - cp -r /sources/distrobox-1.5.0.2 /usr/share/apx
-  - chmod +x /usr/share/apx/distrobox-1.5.0.2/distrobox*
+  - cp -r /sources/distrobox-1.5.0.2 /usr/share/apx/distrobox
+  - chmod +x /usr/share/apx/distrobox/distrobox*
 
 - name: apx
   type: shell
@@ -49,10 +49,10 @@ modules:
   - cp /sources/apx /usr/bin/apx
   - chmod +x /usr/bin/apx
   - |
-    echo '{
-      "apxPath": "/usr/bin/apx",
-      "distroboxpath": "/usr/share/apx/distrobox-1.5.0.2/distrobox",
-      "storageDriver": "btrfs"
+    echo $'{\n
+      "apxPath": "/usr/share/apx",\n
+      "distroboxpath": "/usr/share/apx/distrobox",\n
+      "storageDriver": "btrfs"\n
     }' > /usr/share/apx/apx.json
 
 - name: apx-stacks
