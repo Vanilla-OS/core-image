@@ -3,5 +3,3 @@ type: apt
 source:
   packages:
   - base-files
-  - apx
-
