@@ -23,6 +23,7 @@ modules:
     # switch to production build once in production
     url: https://github.com/Vanilla-OS/ABRoot/releases/download/continuous/abrootv2.tar.gz
   commands:
+  - apt install -y golang-github-containers-common
   - mkdir -p /usr/bin
   - cp /sources/abrootv2 /usr/bin/abroot
   - chmod +x /usr/bin/abroot
