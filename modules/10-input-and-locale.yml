@@ -3,6 +3,7 @@ type: apt
 source:
   packages:
   - locales
+  - kmod
   - xkb-data
   - im-config
   - console-setup
