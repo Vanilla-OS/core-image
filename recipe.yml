@@ -49,10 +49,10 @@ modules:
   - cp /sources/apx /usr/bin/apx
   - chmod +x /usr/bin/apx
   - |
-    echo $'{\n
-      "apxPath": "/usr/share/apx",\n
-      "distroboxpath": "/usr/share/apx/distrobox",\n
-      "storageDriver": "btrfs"\n
+    echo $'{\n\
+      "apxPath": "/usr/share/apx",\n\
+      "distroboxpath": "/usr/share/apx/distrobox",\n\
+      "storageDriver": "btrfs"\n\
     }' > /usr/share/apx/apx.json
 
 - name: apx-stacks
@@ -63,8 +63,8 @@ modules:
     branch: main
     commit: 559ed2ca42d4accbe443bf94da40cb8a31e6181d
   commands:
-  - mv /sources/vanilla-apx-configs/stacks /usr/share/apx/
-  - mv /sources/vanilla-apx-configs/package-managers /usr/share/apx/
+  - mv /sources/apx-stacks/stacks /usr/share/apx/
+  - mv /sources/apx-stacks/package-managers /usr/share/apx/
 
 - name: ikaros
   type: shell
