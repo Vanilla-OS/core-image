@@ -27,6 +27,45 @@ modules:
   - cp /sources/abrootv2 /usr/bin/abroot
   - chmod +x /usr/bin/abroot
 
+  # Dependency of Apx, do not remove
+- name: distrobox
+  type: shell
+  source:
+    type: tar
+    url: https://github.com/89luca89/distrobox/archive/refs/tags/1.5.0.2.tar.gz
+  commands:
+  - mkdir -p /usr/share/apx
+  - cp -r /sources/distrobox-1.5.0.2 /usr/share/apx
+  - chmod +x /usr/share/apx/distrobox-1.5.0.2/distrobox*
+
+- name: apx
+  type: shell
+  source:
+    type: tar
+    # switch to production build once in production
+    url: https://github.com/Vanilla-OS/apx/releases/download/continuous/apx.tar.gz
+  commands:
+  - mkdir -p /usr/bin
+  - cp /sources/apx /usr/bin/apx
+  - chmod +x /usr/bin/apx
+  - |
+    echo '{
+      "apxPath": "/usr/bin/apx",
+      "distroboxpath": "/usr/share/apx/distrobox-1.5.0.2/distrobox",
+      "storageDriver": "btrfs"
+    }' > /usr/share/apx/apx.json
+
+- name: apx-stacks
+  type: shell
+  source:
+    type: git
+    url: https://github.com/Vanilla-OS/vanilla-apx-configs.git
+    branch: main
+    commit: 559ed2ca42d4accbe443bf94da40cb8a31e6181d
+  commands:
+  - mv /sources/vanilla-apx-configs/stacks /usr/share/apx/
+  - mv /sources/vanilla-apx-configs/package-managers /usr/share/apx/
+
 - name: ikaros
   type: shell
   source:
