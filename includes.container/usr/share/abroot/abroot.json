@@ -1,12 +1,12 @@
 {
     "autoRepair": true,
     "maxParallelDownloads": 2,
-    
-    "registry": "registry.vanillaos.org",
+
+    "registry": "ghcr.io",
     "registryAPIVersion": "v2",
-    "name": "vanillaos/core",
+    "name": "core",
     "tag": "main",
-    
+
     "iPkgMngAdd": "apt install -y",
     "iPkgMngRm": "apt remove -y",
 
