@@ -1,4 +1,4 @@
-base: ghcr.io/vanilla-os/pico:ghcr
+base: ghcr.io/vanilla-os/pico:main
 name: Vanilla Core
 singlelayer: false
 labels:
