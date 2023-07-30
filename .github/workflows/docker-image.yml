@@ -39,6 +39,8 @@ jobs:
         password: ${{ env.REGISTRY_PASSWORD }}
         extra-args: |
           --disable-content-trust
+
+    # Push the image to Nexus (Image Registry)
 #    - name: Push To Registry
 #      uses: redhat-actions/push-to-registry@v2.7
 #      with:
