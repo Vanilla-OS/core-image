@@ -5,7 +5,7 @@
     "registry": "ghcr.io",
     "registryAPIVersion": "v2",
     "name": "core",
-    "tag": "ghcr",
+    "tag": "main",
 
     "iPkgMngAdd": "apt install -y",
     "iPkgMngRm": "apt remove -y",
