@@ -1,5 +1,7 @@
-name: vanilla-packages
-type: apt
+name: base-files
+type: dpkg-buildpackage
 source:
-  packages:
-  - base-files
+  type: git
+  url: https://github.com/Vanilla-OS/base-files.git
+  branch: main
+  commit: d3d92d681b4209eb44c97c96bfcba3a811c43d87
