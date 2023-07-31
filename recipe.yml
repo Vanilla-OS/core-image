@@ -98,6 +98,7 @@ modules:
 - name: cleanup
   type: shell
   commands:
+  - apt remove -y dpkg-dev build-essential
   - apt autoremove -y
   - apt clean
   - rm -rf /var/cache/*
