@@ -6,8 +6,9 @@ source:
   branch: main
   commit: d3d92d681b4209eb44c97c96bfcba3a811c43d87
 modules:
-- name: dpkg-dev-install
+- name: base-files-deps-install
   type: apt
   source:
     packages:
     - dpkg-dev
+    - build-essential
