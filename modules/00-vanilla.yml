@@ -5,6 +5,8 @@ source:
   url: https://github.com/Vanilla-OS/base-files.git
   branch: main
   commit: d3d92d681b4209eb44c97c96bfcba3a811c43d87
+  paths:
+  - base-files
 modules:
 - name: base-files-deps-install
   type: apt
