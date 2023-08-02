@@ -92,8 +92,23 @@ modules:
   - /usr/bin/sign_filelist
 
 - name: packages-modules
-  type: gen-modules
-  path: modules
+  type: includes
+  includes: 
+    - modules/00-vanilla
+    - modules/10-input-and-locale
+    - modules/20-ssh
+    - modules/30-utils
+    - modules/40-essentials
+    - modules/50-fs
+    - modules/60-sound
+    - modules/70-compression
+    - modules/80-xdg
+    - modules/90-network
+    - modules/100-modules
+    - modules/110-fwupd
+    - modules/120-fingerprint
+    - modules/130-kernel
+    - modules/140-manpages
 
 - name: cleanup
   type: shell
