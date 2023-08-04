@@ -38,7 +38,7 @@ jobs:
 #      uses: redhat-actions/push-to-registry@v2.7
 #      with:
 #        registry: ${{ env.IMAGE_REGISTRY }}
-#        image: desktop
+#        image: core
 #        tags: ${{ github.ref_name }}
 #        username: ${{ env.REGISTRY_USER }}
 #        password: ${{ env.REGISTRY_PASSWORD }}
