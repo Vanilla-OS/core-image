@@ -62,8 +62,9 @@ modules:
     type: git
     url: https://github.com/Vanilla-OS/vanilla-apx-configs.git
     branch: main
-    commit: 559ed2ca42d4accbe443bf94da40cb8a31e6181d
+    commit: c36f7f5415f565ea86d5b655a269b863ba5c2ed1
   commands:
+  - mkdir -p /usr/share/apx
   - mv /sources/apx-stacks/stacks /usr/share/apx/
   - mv /sources/apx-stacks/package-managers /usr/share/apx/
 
