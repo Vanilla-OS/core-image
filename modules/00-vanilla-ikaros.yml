@@ -1,0 +1,18 @@
+name: ikaros
+type: shell
+source:
+  type: tar
+  # switch to production build once in production
+  url: https://github.com/Vanilla-OS/Ikaros/releases/download/continuous/ikaros.tar.gz
+commands:
+- mkdir -p /usr/bin
+- cp /sources/ikaros /usr/bin/ikaros
+- chmod +x /usr/bin/ikaros
+modules:
+- name: ikaros-manpage
+  type: shell
+  source:
+    type: tar
+    url: https://github.com/Vanilla-OS/Ikaros/releases/download/continuous/ikaros-man.tar.gz
+  commands:
+  - mv /sources/man/ikaros.1 /usr/share/man/man1/
