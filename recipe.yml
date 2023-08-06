@@ -28,77 +28,6 @@ modules:
   - cp /sources/abrootv2 /usr/bin/abroot
   - chmod +x /usr/bin/abroot
 
-  # Dependency of Apx, do not remove
-- name: distrobox
-  type: shell
-  source:
-    type: tar
-    url: https://github.com/89luca89/distrobox/archive/refs/tags/1.5.0.2.tar.gz
-  commands:
-  - mkdir -p /usr/share/apx
-  - cp -r /sources/distrobox-1.5.0.2 /usr/share/apx/distrobox
-  - chmod +x /usr/share/apx/distrobox/distrobox*
-
-- name: apx
-  type: shell
-  source:
-    type: tar
-    # switch to production build once in production
-    url: https://github.com/Vanilla-OS/apx/releases/download/continuous/apx.tar.gz
-  commands:
-  - mkdir -p /usr/bin
-  - cp /sources/apx /usr/bin/apx
-  - chmod +x /usr/bin/apx
-  - |
-    echo '{\n\
-      "apxPath": "/usr/share/apx",\n\
-      "distroboxpath": "/usr/share/apx/distrobox/distrobox",\n\
-      "storageDriver": "btrfs"\n\
-    }' > /usr/share/apx/apx.json
-
-- name: apx-man
-  type: shell
-  source:
-    type: git
-    url: https://github.com/Vanilla-OS/apx
-    branch: v2
-    commit: d51bcf0680498a99a0835222838f1383ba8510ef
-  commands:
-  - mv /sources/apx-man/man/man1/apx.1 /usr/share/man/man1/
-
-- name: apx-stacks
-  type: shell
-  source:
-    type: git
-    url: https://github.com/Vanilla-OS/vanilla-apx-configs.git
-    branch: main
-    commit: c36f7f5415f565ea86d5b655a269b863ba5c2ed1
-  commands:
-  - mkdir -p /usr/share/apx
-  - mv /sources/apx-stacks/stacks /usr/share/apx/
-  - mv /sources/apx-stacks/package-managers /usr/share/apx/
-
-- name: ikaros
-  type: shell
-  source:
-    type: tar
-    # switch to production build once in production
-    url: https://github.com/Vanilla-OS/Ikaros/releases/download/continuous/ikaros.tar.gz
-  commands:
-  - mkdir -p /usr/bin
-  - cp /sources/ikaros /usr/bin/ikaros
-  - chmod +x /usr/bin/ikaros
-
-- name: ikaros-man
-  type: shell
-  source:
-    type: git
-    url: https://github.com/Vanilla-OS/Ikaros
-    branch: main
-    commit: eba76710daba8bd173bc57a7fb22b59be706d586
-  commands:
-  - mv /sources/ikaros-man/man/ikaros.1 /usr/share/man/man1/
-
 - name: fsguard
   type: shell
   source:
@@ -115,7 +44,10 @@ modules:
 - name: packages-modules
   type: includes
   includes:
-    - modules/00-vanilla
+    - modules/00-vanilla-base-files
+    - modules/00-vanilla-apx
+    - modules/00-vanilla-apx-stacks
+    - modules/00-vanilla-ikaros
     - modules/10-input-and-locale
     - modules/20-ssh
     - modules/30-utils
