@@ -17,4 +17,4 @@ modules:
     branch: main
     commit: latest
   commands:
-  - mv /sources/ikaros-manpage/man/ikaros.1 /usr/share/man/man1/
+  - mv /sources/man/ikaros.1 /usr/share/man/man1/

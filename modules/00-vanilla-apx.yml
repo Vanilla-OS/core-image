@@ -30,4 +30,4 @@ modules:
     type: tar
     url: https://github.com/Vanilla-OS/apx/releases/download/continuous/apx-man.tar.gz
   commands:
-  - mv /sources/apx-manpage/man/man1/apx.1 /usr/share/man/man1/
+  - mv /sources/man/man1/apx.1 /usr/share/man/man1/
