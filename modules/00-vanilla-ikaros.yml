@@ -12,9 +12,7 @@ modules:
 - name: ikaros-manpage
   type: shell
   source:
-    type: git
-    url: https://github.com/Vanilla-OS/Ikaros
-    branch: main
-    commit: latest
+    type: tar
+    url: https://github.com/Vanilla-OS/Ikaros/releases/download/continuous/ikaros-man.tar.gz
   commands:
   - mv /sources/man/ikaros.1 /usr/share/man/man1/
