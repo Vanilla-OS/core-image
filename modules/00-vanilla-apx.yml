@@ -8,12 +8,6 @@ commands:
 - mkdir -p /usr/bin
 - cp /sources/apx /usr/bin/apx
 - chmod +x /usr/bin/apx
-- |
-  echo '{\n\
-    "apxPath": "/usr/share/apx",\n\
-    "distroboxpath": "/usr/share/apx/distrobox/distrobox",\n\
-    "storageDriver": "btrfs"\n\
-  }' > /usr/share/apx/apx.json
 modules:
 - name: distrobox
   type: shell
