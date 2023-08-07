@@ -25,3 +25,10 @@ modules:
     url: https://github.com/Vanilla-OS/apx/releases/download/continuous/apx-man.tar.gz
   commands:
   - mv /sources/man/man1/apx.1 /usr/share/man/man1/
+- name: apx-config
+  type: shell
+  source:
+    type: tar
+    url: https://github.com/Vanilla-OS/apx/releases/download/continuous/apx-config.tar.gz
+  commands:
+  - mv /sources/config/apx.json /usr/share/apx/
