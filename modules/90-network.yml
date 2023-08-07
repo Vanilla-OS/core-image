@@ -22,3 +22,4 @@ source:
   - libnss-mdns
   - libproxy1-plugin-networkmanager
   - ntp
+  - iputils-ping
