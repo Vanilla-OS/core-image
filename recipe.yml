@@ -48,6 +48,7 @@ modules:
     - modules/00-vanilla-apx
     - modules/00-vanilla-apx-stacks
     - modules/00-vanilla-ikaros
+    - modules/05-firmware
     - modules/10-input-and-locale
     - modules/20-ssh
     - modules/30-utils
