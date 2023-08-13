@@ -9,6 +9,7 @@ source:
   - firmware-realtek
   - firmware-atheros
   - intel-microcode
+  - amd64-microcode
   - b43-fwcutter
   - firmware-b43-installer
   - firmware-brcm80211
