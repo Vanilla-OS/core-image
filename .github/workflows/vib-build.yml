@@ -2,7 +2,7 @@ name: Vib Build
 
 on:
   push:
-    branches: [ "main", "ghcr" ]
+    branches: [ "main" ]
   workflow_dispatch:
 
 env:
@@ -25,11 +25,11 @@ jobs:
         ./vib build recipe.yml
 
     - name: Build the Docker image
-      run: docker image build -f Containerfile --tag ghcr.io/vanilla-os/core:ghcr .
+      run: docker image build -f Containerfile --tag ghcr.io/vanilla-os/core:main .
 
     # Push the image to GHCR (Image Registry)
     - name: Push To GHCR
       run: |
         docker login ghcr.io -u ${{ env.REGISTRY_USER }} -p ${{ env.REGISTRY_PASSWORD }}
-        docker image push "ghcr.io/vanilla-os/core:ghcr"
+        docker image push "ghcr.io/vanilla-os/core:main"
  
