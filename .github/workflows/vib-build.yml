@@ -2,7 +2,7 @@ name: Vib Build
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "ghcr" ]
   workflow_dispatch:
 
 env:
@@ -25,32 +25,11 @@ jobs:
         ./vib build recipe.yml
 
     - name: Build the Docker image
-      run: docker image build -f Containerfile --tag ghcr.io/vanilla-os/core:main .
+      run: docker image build -f Containerfile --tag ghcr.io/vanilla-os/core:ghcr .
 
     # Push the image to GHCR (Image Registry)
     - name: Push To GHCR
       run: |
         docker login ghcr.io -u ${{ env.REGISTRY_USER }} -p ${{ env.REGISTRY_PASSWORD }}
-        docker image push "ghcr.io/vanilla-os/core:main"
+        docker image push "ghcr.io/vanilla-os/core:ghcr"
  
-# Push the image to GHCR (Image Registry) [Old]
-#    - name: Push To GHCR
-#      uses: redhat-actions/push-to-registry@v2.7
-#      with:
-#        registry: ${{ env.IMAGE_REGISTRY }}
-#        image: core
-#        tags: ${{ github.ref_name }}
-#        username: ${{ env.REGISTRY_USER }}
-#        password: ${{ env.REGISTRY_PASSWORD }}
-#        extra-args: |
-#          --disable-content-trust
-# Push the image to Nexus (Image Registry)
-#    - name: Push To Registry
-#      uses: redhat-actions/push-to-registry@v2.7
-#      with:
-#        image: vanillaos/core
-#        tags: ${{ github.ref_name }}
-#        registry: ${{ secrets.NEXUS_REGISTRY }}
-#        username: ${{ secrets.NEXUS_USER }}
-#        password: ${{ secrets.NEXUS_PSW }}
-#        tls-verify: false
