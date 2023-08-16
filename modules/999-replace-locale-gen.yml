@@ -2,7 +2,7 @@ name: replace-locale-gen
 type: shell
 commands:
 - |
-  echo '\
+  echo -e '\
   #!/bin/sh\n\
   \n\
   set -e\n\
@@ -14,7 +14,7 @@ commands:
   \n\
   [ -s "$LOCALEGEN" ] || exit 0\n\
   \n\
-  [ "$1" = \'--keep-existing\' ] && KEEP=1 || KEEP=0\n\
+  [ "$1" = '\''--keep-existing'\'' ] && KEEP=1 || KEEP=0\n\
   \n\
   # Remove old locale-archive before generating new locale data\n\
   [ "$KEEP" -eq 0 ] && rm -rf /usr/lib/locale/locale-archive || :\n\
@@ -26,7 +26,7 @@ commands:
   \n\
   is_entry_ok() {\n\
       if [ -z "$locale" ] || [ -z "$charset" ]; then\n\
-          echo "error: Bad entry \'$locale $charset\'"\n\
+          echo "error: Bad entry '\''$locale $charset'\''"\n\
           return 1\n\
       fi\n\
   }\n\
@@ -36,7 +36,7 @@ commands:
       if [ -z "$locale" ] || [ "${locale#\#}" != "$locale" ]; then continue; fi\n\
       is_entry_ok || continue\n\
   \n\
-      if [ "$KEEP" -eq 1 ] && PERL_BADLANG=0 perl -MPOSIX -e \'exit 1 unless setlocale(LC_ALL, $ARGV[0])\' "$locale"; then continue; fi\n\
+      if [ "$KEEP" -eq 1 ] && PERL_BADLANG=0 perl -MPOSIX -e '\''exit 1 unless setlocale(LC_ALL, $ARGV[0])'\'' "$locale"; then continue; fi\n\
   \n\
       locale_base="${locale%%.*}"\n\
       locale_base="${locale_base%%@*}"\n\
@@ -57,5 +57,5 @@ commands:
       localedef -i "$input" -c -f "$charset" -A /usr/share/locale/locale.alias "${LOCALEDIR}/${locale}" || :\n\
       echo " done"\n\
   done < "$LOCALEGEN"\n\
-  echo "Generation complete."\n\
+  echo "Generation complete."\
   ' > /usr/sbin/locale-gen
