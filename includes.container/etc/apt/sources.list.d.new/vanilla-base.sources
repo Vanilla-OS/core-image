@@ -2,5 +2,5 @@ Types: deb
 URIs: http://repo2.vanillaos.org/
 Suites: sid
 Architectures: amd64
-Components: main
+Components: main contrib non-free non-free-firmware
 Signed-By: /usr/share/keyrings/vanilla_keyring.gpg
