@@ -2,13 +2,15 @@
     "autoRepair": true,
     "maxParallelDownloads": 2,
 
-    "registry": "ghcr.io/vanilla-os",
+    "registry": "ghcr.io",
+    "registryService": "registry.ghcr.io",
     "registryAPIVersion": "v2",
-    "name": "core",
+    "name": "vanilla-os/core",
     "tag": "main",
 
     "iPkgMngAdd": "apt install -y",
     "iPkgMngRm": "apt remove -y",
+    "iPkgMngApi": "https://packages.vanillaos.org/api/pkg/{packageName}",
 
     "partLabelVar": "vos-var",
     "partLabelA": "vos-a",
