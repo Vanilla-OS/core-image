@@ -68,6 +68,7 @@ modules:
 - name: cleanup
   type: shell
   commands:
+  - apt remove -y linux-image-rt-amd64
   - apt remove -y dpkg-dev build-essential
   - apt autoremove -y
   - apt clean
