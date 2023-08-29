@@ -32,6 +32,7 @@ modules:
 - name: packages-modules
   type: includes
   includes:
+    - modules/00-vanilla-abroot
     - modules/00-vanilla-base-files
     - modules/00-vanilla-apx
     - modules/00-vanilla-apx-stacks

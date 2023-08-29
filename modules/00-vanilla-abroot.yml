@@ -1,9 +1,9 @@
 name: abroot
 type: shell
 source:
-    type: tar
-    # switch to production build once in production
-    url: https://github.com/Vanilla-OS/ABRoot/releases/download/continuous/abrootv2.tar.gz
+  type: tar
+  # switch to production build once in production
+  url: https://github.com/Vanilla-OS/ABRoot/releases/download/continuous/abrootv2.tar.gz
 commands:
   - apt install -y podman golang-github-containers-common patch
   - mkdir -p /usr/bin
