@@ -23,3 +23,4 @@ source:
   - shim-helpers-amd64-signed
   - uidmap
   - minisign
+  - zram-tools
