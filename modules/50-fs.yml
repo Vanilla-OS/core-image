@@ -10,3 +10,4 @@ source:
   - nfs-common
   - gvfs-fuse
   - libfuse3-3
+  - lvm2
