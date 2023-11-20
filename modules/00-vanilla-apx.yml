@@ -16,7 +16,7 @@ modules:
     url: https://github.com/89luca89/distrobox/archive/refs/tags/1.6.0.tar.gz
   commands:
   - mkdir -p /usr/share/apx
-  - cp -r /sources/distrobox-1.5.0.2 /usr/share/apx/distrobox
+  - cp -r /sources/distrobox-1.6.0 /usr/share/apx/distrobox
   - chmod +x /usr/share/apx/distrobox/distrobox*
 - name: apx-manpage
   type: shell
