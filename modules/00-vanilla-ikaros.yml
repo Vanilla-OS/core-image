@@ -9,6 +9,11 @@ commands:
 - cp /sources/ikaros /usr/bin/ikaros
 - chmod +x /usr/bin/ikaros
 modules:
+- name: lshw
+  type: apt
+  source:
+    packages:
+    - lshw
 - name: ikaros-manpage
   type: shell
   source:
