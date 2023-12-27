@@ -6,7 +6,7 @@ source:
   - systemd-sysv
   - user-setup
   - console-setup
-  - sudo
+  # - sudo
   - acpi
   - policykit-1
   - bc
