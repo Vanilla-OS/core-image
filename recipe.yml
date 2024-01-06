@@ -64,6 +64,6 @@ modules:
   modules:
     - name: minisign
       type: apt
-      sources:
+      source:
         packages:
           - "minisign"
