@@ -41,20 +41,13 @@ modules:
     - modules/140-manpages
     - modules/999-replace-locale-gen
 
-- name: cleanup
+- name: cleanup1
   type: shell
   commands:
   - apt remove -y linux-image-rt-amd64 linux-image-6.4.0-4-rt-amd64
   - apt remove -y dpkg-dev build-essential
   - apt autoremove -y
   - apt clean
-  - rm -rf /var/cache/*
-  - rm -rf /tmp/*
-  - rm -rf /var/tmp/*
-  - rm -rf /sources
-  - rm /usr/bin/gen_fsguard_filelist
-  - rm /usr/bin/sign_filelist
-  - mkdir -p /var/cache/apt/archives/partial
 
 - name: fsguard
   type: fsguard
@@ -67,3 +60,12 @@ modules:
       source:
         packages:
           - "minisign"
+
+- name: cleanup2
+  type: shell
+  commands:
+    - rm -rf /var/cache/*
+    - rm -rf /tmp/*
+    - rm -rf /var/tmp/*
+    - rm -rf /sources
+    - mkdir -p /var/cache/apt/archives/partial
