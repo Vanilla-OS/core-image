@@ -19,6 +19,8 @@ jobs:
     - uses: actions/checkout@v4
 
     - uses: vanilla-os/vib-gh-action@v0.3.2-2
+      with:
+        plugins: 'Vanilla-OS/vib-fsguard:v1.0'
 
     - name: Build the Docker image
       run: docker image build -f Containerfile --tag ghcr.io/vanilla-os/core:main .

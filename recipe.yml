@@ -16,19 +16,6 @@ modules:
   - apt install -y man-db
   - mandb -c
 
-- name: fsguard
-  type: shell
-  source:
-    type: tar
-    url: https://github.com/linux-immutability-tools/FsGuard/releases/download/v0.1.2/FsGuard_0.1.2_linux_amd64.tar.gz
-  commands:
-  - apt install -y minisign
-  - mv /sources/FsGuard /usr/bin
-  - /usr/bin/gen_fsguard_filelist /usr/bin
-  - sed -i '\/usr\/bin\/gen_fsguard_filelist.*/d' /FsGuard/filelist
-  - sed -i '\/usr\/bin\/sign_filelist.*/d' /FsGuard/filelist
-  - /usr/bin/sign_filelist
-
 - name: packages-modules
   type: includes
   includes:
@@ -68,3 +55,15 @@ modules:
   - rm /usr/bin/gen_fsguard_filelist
   - rm /usr/bin/sign_filelist
   - mkdir -p /var/cache/apt/archives/partial
+
+- name: fsguard
+  type: fsguard
+  FsGuardLocation: "/usr/sbin/init"
+  GenerateKey: true
+  FilelistPaths: ["/usr/bin"]
+  modules:
+    - name: minisign
+      type: apt
+      sources:
+        packages:
+          - "minisign"
