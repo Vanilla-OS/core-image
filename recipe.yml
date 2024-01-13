@@ -24,6 +24,7 @@ modules:
     - modules/00-vanilla-apx
     - modules/00-vanilla-apx-stacks
     - modules/00-vanilla-ikaros
+    - modules/03-fswarn
     - modules/05-firmware
     - modules/10-input-and-locale
     - modules/20-ssh
@@ -41,6 +42,13 @@ modules:
     - modules/140-manpages
     - modules/999-replace-locale-gen
 
+- name: fsguard-runtime-deps
+  type: apt
+  source:
+    packages:
+      - "minisign"
+      - "squashfs-tools"
+
 - name: cleanup1
   type: shell
   commands:
@@ -51,7 +59,7 @@ modules:
 
 - name: fsguard
   type: fsguard
-  FsGuardLocation: "/usr/sbin/init"
+  FsGuardLocation: "/usr/sbin/FsGuard"
   GenerateKey: true
   FilelistPaths: ["/usr/bin"]
   modules:
