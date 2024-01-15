@@ -40,7 +40,7 @@ modules:
     - modules/120-fingerprint
     - modules/130-kernel
     - modules/140-manpages
-    - modules/998-podman-registry.yml
+    - modules/998-podman-registry
     - modules/999-replace-locale-gen
 
 - name: fsguard-runtime-deps
