@@ -1,0 +1,6 @@
+# this module exists to work around dpkg failing to install a podman
+# dependency, due to a conflict with our existing registry configuration
+name: podman-rgistry
+type: shell
+commands:
+- echo "unqualified-search-registries=[\"docker.io\"]" >> /etc/containers/registries.conf
