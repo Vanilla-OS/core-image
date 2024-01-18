@@ -1,0 +1,83 @@
+log_file: /dev/null
+syscalls:
+  - fsmount:
+      log: false
+      block: true
+      arg0:
+        content: "/usr"
+        matchtype: "contains"
+        isChar: true
+        isFdesc: true
+  - mount:
+      log: false
+      block: true
+      arg1:
+        content: "/usr"
+        matchtype: "contains"
+        isChar: true
+        isFdesc: false
+  - mount:
+      log: false
+      block: true
+      arg0:
+        content: "/usr"
+        matchtype: "contains"
+        isChar: true
+        isFdesc: false
+  - mount_setattr:
+      log: false
+      block: true
+      arg0:
+        content: "/usr"
+        matchtype: "contains"
+        isChar: true
+        isFdesc: true
+  - mount_setattr:
+      log: false
+      block: true
+      arg1:
+        content: "/usr"
+        matchtype: "contains"
+        ischar: true
+        isFdesc: false
+  - move_mount:
+      log: false
+      block: true
+      arg0:
+        content: "/usr"
+        matchtype: "contains"
+        isChar: true
+        isFdesc: true
+  - move_mount:
+      log: false
+      block: true
+      arg1:
+        content: "/usr"
+        matchtype: "contains"
+        isChar: true
+        isFdesc: false
+  - move_mount:
+      log: false
+      block: true
+      arg2:
+        content: "/usr"
+        matchtype: "contains"
+        isChar: true
+        isFdesc: true
+  - move_mount:
+      log: false
+      block: true
+      arg3:
+        content: "/usr"
+        matchtype: "contains"
+        isChar: true
+        isFdesc: false
+  - umount2:
+      log: false
+      block: true
+      arg0:
+        content: "/usr"
+        matchtype: "contains"
+        isChar: true
+        isFdesc: false
+

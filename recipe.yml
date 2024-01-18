@@ -25,6 +25,7 @@ modules:
     - modules/00-vanilla-apx-stacks
     - modules/00-vanilla-ikaros
     - modules/03-fswarn
+    - modules/03-syscall_interceptor
     - modules/05-firmware
     - modules/10-input-and-locale
     - modules/20-ssh
@@ -53,6 +54,7 @@ modules:
 - name: cleanup1
   type: shell
   commands:
+  - mv /ld.so.preload /etc/ld.so.preload
   - apt remove -y linux-image-rt-amd64 linux-image-6.4.0-4-rt-amd64
   - apt remove -y dpkg-dev build-essential
   - apt autoremove -y

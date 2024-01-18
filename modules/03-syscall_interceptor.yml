@@ -1,0 +1,44 @@
+name: syscall_interceptor
+type: shell
+commands:
+  - cd /sources/syscall-interceptor-1.1-1/
+  - autoreconf --install
+  - cp /syscall_config.yml ./config.yml
+  - ./configure
+  - make
+  - cp src/.libs/libsyscall_interceptor.so /usr/lib/
+  - rm /syscall_config.yml
+source:
+  type: tar
+  url: https://github.com/linux-immutability-tools/syscall-interceptor/archive/refs/tags/v1.1-1.tar.gz
+  checksum: a59dfec4909ffbdf51327ca3b44b9d04298670e9af75dc3652b5b234076ddd89
+modules:
+  - name: package_deps
+    type: apt
+    source:
+      packages:
+        - python3-yaml
+        - libcapstone-dev
+        - gcc
+        - cmake
+        - make
+        - pkg-config
+        - autoconf
+        - automake
+        - autotools-dev
+        - libtool
+  - name: syscall_intercept
+    type: shell
+    commands:
+      - cd /sources/syscall_intercept
+      - mkdir build
+      - cd build
+      - cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER=gcc
+      - make
+      - make install
+    source:
+      type: git
+      url: https://github.com/pmem/syscall_intercept
+      branch: "master"
+      commit: ca4b13531f883597c2f04a40e095f76f6c3a6d22
+
