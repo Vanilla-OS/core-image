@@ -18,7 +18,7 @@ modules:
   - mkdir -p /usr/share/apx
   - cp -r /sources/distrobox-1.6.0.1 /usr/share/apx/distrobox
   - chmod +x /usr/share/apx/distrobox/distrobox*
-  - sed -E -i 's/distrobox enter %s/apx %s enter/' /usr/share/apx/distrobox/distrobox-create
+  - sed -E -i 's/.*printf "distrobox.*/echo apx \$(echo ${container_name} | sed "s|apx-||") enter/g' /usr/share/apx/distrobox/distrobox-create
 - name: apx-manpage
   type: shell
   source:
