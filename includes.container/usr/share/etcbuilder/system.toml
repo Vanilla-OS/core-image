@@ -1,1 +1,1 @@
-SpecialFiles = ["passwd", "shadow", "gshadow"]
+SpecialFiles = ["passwd", "shadow", "gshadow", "groups"]
