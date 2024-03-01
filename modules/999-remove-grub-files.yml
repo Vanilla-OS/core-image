@@ -1,0 +1,6 @@
+name: remove-grub-files
+type: shell
+commands:
+- rm /etc/grub.d/05_debian_theme
+- rm /etc/grub.d/10_linux
+- rm /etc/grub.d/20_linux_xen

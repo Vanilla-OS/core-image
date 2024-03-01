@@ -1,0 +1,6 @@
+#!/bin/sh
+# 30_os-prober in chroot fails to unmount this directory
+
+set +e
+umount -R /var/lib/os-prober/mount/
+set -e
