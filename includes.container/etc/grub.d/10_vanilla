@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# vanilla os entry, don't change the REPLACED_BY_ABROOT placeholder
+cat << EOF
+menuentry "Vanilla OS" --class gnu-linux --class gnu --class os {
+  insmod gzio
+  insmod part_gpt
+  insmod ext2
+REPLACED_BY_ABROOT
+}
+EOF
