@@ -5,7 +5,7 @@ source:
   # switch to production build once in production
   url: https://github.com/Vanilla-OS/ABRoot/releases/download/continuous/abrootv2.tar.gz
 commands:
-  - apt install -y podman golang-github-containers-common patch
+  - apt install -y podman golang-github-containers-common patch wget
   - mkdir -p /usr/bin
   - cp /sources/abrootv2 /usr/bin/abroot
   - chmod +x /usr/bin/abroot
@@ -18,5 +18,9 @@ modules:
   source:
     type: tar
     url: https://github.com/Vanilla-OS/ABRoot/releases/download/continuous/abroot-man.tar.gz
+  commands:
+  - mv /sources/man/man1/abroot.1 /usr/share/man/man1/
+- name: crun
+  type: shell
   commands:
   - mv /sources/man/man1/abroot.1 /usr/share/man/man1/
