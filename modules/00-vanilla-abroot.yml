@@ -20,7 +20,3 @@ modules:
     url: https://github.com/Vanilla-OS/ABRoot/releases/download/continuous/abroot-man.tar.gz
   commands:
   - mv /sources/man/man1/abroot.1 /usr/share/man/man1/
-- name: crun
-  type: shell
-  commands:
-  - mv /sources/man/man1/abroot.1 /usr/share/man/man1/
