@@ -1,5 +1,6 @@
 name: Vanilla Core
 id: vanilla-core
+
 stages:
 - id: build
   base: ghcr.io/vanilla-os/pico:main
@@ -22,7 +23,7 @@ stages:
   - name: packages-modules
     type: includes
     includes:
-      - modules/00-vanilla-abrobase: ghcr.io/vanilla-os/pico:mainot
+      - modules/00-vanilla-abroot
       - modules/00-vanilla-base-files
       - modules/00-vanilla-apx
       - modules/00-vanilla-apx-stacks
