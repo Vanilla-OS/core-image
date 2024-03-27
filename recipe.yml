@@ -1,86 +1,89 @@
-base: ghcr.io/vanilla-os/pico:main
 name: Vanilla Core
-singlelayer: false
-labels:
-  maintainer: Vanilla OS Contributors
-args:
-  DEBIAN_FRONTEND: noninteractive
-runs:
-- echo 'APT::Install-Recommends "1";' > /etc/apt/apt.conf.d/01norecommends
+id: vanilla-core
+stages:
+- id: build
+  base: ghcr.io/vanilla-os/pico:main
+  singlelayer: false
+  labels:
+    maintainer: Vanilla OS Contributors
+  args:
+    DEBIAN_FRONTEND: noninteractive
+  runs:
+  - echo 'APT::Install-Recommends "1";' > /etc/apt/apt.conf.d/01norecommends
 
-modules:
-- name: mandb
-  type: shell
-  commands:
-  - apt update
-  - apt install -y man-db
-  - mandb -c
-
-- name: packages-modules
-  type: includes
-  includes:
-    - modules/00-vanilla-abroot
-    - modules/00-vanilla-base-files
-    - modules/00-vanilla-apx
-    - modules/00-vanilla-apx-stacks
-    - modules/00-vanilla-ikaros
-    - modules/03-fswarn
-    - modules/05-firmware
-    - modules/10-input-and-locale
-    - modules/20-ssh
-    - modules/30-utils
-    - modules/40-essentials
-    - modules/50-fs
-    - modules/60-sound
-    - modules/70-compression
-    - modules/80-xdg
-    - modules/90-network
-    - modules/100-modules
-    - modules/110-fwupd
-    - modules/120-fingerprint
-    - modules/130-kernel
-    - modules/140-manpages
-    - modules/998-podman-registry
-    - modules/999-replace-locale-gen
-    - modules/999-remove-grub-files
-
-- name: zram-config
-  type: shell
-  commands:
-    - echo -e "ALGO=lz4\nPERCENT=50" | sudo tee -a /etc/default/zramswap
-
-- name: fsguard-runtime-deps
-  type: apt
-  source:
-    packages:
-      - "minisign"
-      - "squashfs-tools"
-
-- name: cleanup1
-  type: shell
-  commands:
-  - apt remove -y linux-image-rt-amd64 linux-image-6.6.13-rt-amd64
-  - apt remove -y dpkg-dev build-essential
-  - apt autoremove -y
-  - apt clean
-
-- name: fsguard
-  type: fsguard
-  FsGuardLocation: "/usr/sbin/FsGuard"
-  GenerateKey: true
-  FilelistPaths: ["/usr/bin"]
   modules:
-    - name: minisign
-      type: apt
-      source:
-        packages:
-          - "minisign"
+  - name: mandb
+    type: shell
+    commands:
+    - apt update
+    - apt install -y man-db
+    - mandb -c
 
-- name: cleanup2
-  type: shell
-  commands:
-    - rm -rf /var/cache/*
-    - rm -rf /tmp/*
-    - rm -rf /var/tmp/*
-    - rm -rf /sources
-    - mkdir -p /var/cache/apt/archives/partial
+  - name: packages-modules
+    type: includes
+    includes:
+      - modules/00-vanilla-abrobase: ghcr.io/vanilla-os/pico:mainot
+      - modules/00-vanilla-base-files
+      - modules/00-vanilla-apx
+      - modules/00-vanilla-apx-stacks
+      - modules/00-vanilla-ikaros
+      - modules/03-fswarn
+      - modules/05-firmware
+      - modules/10-input-and-locale
+      - modules/20-ssh
+      - modules/30-utils
+      - modules/40-essentials
+      - modules/50-fs
+      - modules/60-sound
+      - modules/70-compression
+      - modules/80-xdg
+      - modules/90-network
+      - modules/100-modules
+      - modules/110-fwupd
+      - modules/120-fingerprint
+      - modules/130-kernel
+      - modules/140-manpages
+      - modules/998-podman-registry
+      - modules/999-replace-locale-gen
+      - modules/999-remove-grub-files
+
+  - name: zram-config
+    type: shell
+    commands:
+      - echo -e "ALGO=lz4\nPERCENT=50" | sudo tee -a /etc/default/zramswap
+
+  - name: fsguard-runtime-deps
+    type: apt
+    source:
+      packages:
+        - "minisign"
+        - "squashfs-tools"
+
+  - name: cleanup1
+    type: shell
+    commands:
+    - apt remove -y linux-image-rt-amd64 linux-image-6.6.13-rt-amd64
+    - apt remove -y dpkg-dev build-essential
+    - apt autoremove -y
+    - apt clean
+
+  - name: fsguard
+    type: fsguard
+    FsGuardLocation: "/usr/sbin/FsGuard"
+    GenerateKey: true
+    FilelistPaths: ["/usr/bin"]
+    modules:
+      - name: minisign
+        type: apt
+        source:
+          packages:
+            - "minisign"
+
+  - name: cleanup2
+    type: shell
+    commands:
+      - rm -rf /var/cache/*
+      - rm -rf /tmp/*
+      - rm -rf /var/tmp/*
+      - rm -rf /sources
+      - mkdir -p /var/cache/apt/archives/partial
