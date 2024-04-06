@@ -51,7 +51,7 @@ stages:
   - name: zram-config
     type: shell
     commands:
-      - echo -e "ALGO=lz4\nPERCENT=50" | sudo tee -a /etc/default/zramswap
+      - echo -e "ALGO=lz4\nPERCENT=50" >> /etc/default/zramswap
 
   - name: fsguard-runtime-deps
     type: apt
