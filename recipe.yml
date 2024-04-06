@@ -59,6 +59,7 @@ stages:
       packages:
         - "minisign"
         - "squashfs-tools"
+        - "python3"
 
   - name: cleanup1
     type: shell
