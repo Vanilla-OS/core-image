@@ -23,30 +23,30 @@ stages:
   - name: packages-modules
     type: includes
     includes:
-      - modules/00-vanilla-abroot.yml
-      - modules/00-vanilla-base-files.yml
-      - modules/00-vanilla-apx.yml
-      - modules/00-vanilla-apx-stacks.yml
-      - modules/00-vanilla-ikaros.yml
-      - modules/03-fswarn.yml
-      - modules/05-firmware.yml
-      - modules/10-input-and-locale.yml
-      - modules/20-ssh.yml
-      - modules/30-utils.yml
-      - modules/40-essentials.yml
-      - modules/50-fs.yml
-      - modules/60-sound.yml
-      - modules/70-compression.yml
-      - modules/80-xdg.yml
-      - modules/90-network.yml
-      - modules/100-modules.yml
-      - modules/110-fwupd.yml
-      - modules/120-fingerprint.yml
-      - modules/130-kernel.yml
-      - modules/140-manpages.yml
-      - modules/998-podman-registry.yml
-      - modules/999-replace-locale-gen.yml
-      - modules/999-remove-grub-files.yml
+      - modules/00-vanilla-abroot
+      - modules/00-vanilla-base-files
+      - modules/00-vanilla-apx
+      - modules/00-vanilla-apx-stacks
+      - modules/00-vanilla-ikaros
+      - modules/03-fswarn
+      - modules/05-firmware
+      - modules/10-input-and-locale
+      - modules/20-ssh
+      - modules/30-utils
+      - modules/40-essentials
+      - modules/50-fs
+      - modules/60-sound
+      - modules/70-compression
+      - modules/80-xdg
+      - modules/90-network
+      - modules/100-modules
+      - modules/110-fwupd
+      - modules/120-fingerprint
+      - modules/130-kernel
+      - modules/140-manpages
+      - modules/998-podman-registry
+      - modules/999-replace-locale-gen
+      - modules/999-remove-grub-files
 
   - name: zram-config
     type: shell
