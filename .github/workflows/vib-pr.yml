@@ -16,7 +16,7 @@ jobs:
     - uses: vanilla-os/vib-gh-action@v0.6.0
       with:
         recipe: 'recipe.yml'
-        plugins: 'Vanilla-OS/vib-fsguard:v1.3'
+        plugins: 'Vanilla-OS/vib-fsguard:v1.3-2'
 
     - name: Build the Docker image
       run: docker image build -f Containerfile --tag vanillaos/core:validation .
