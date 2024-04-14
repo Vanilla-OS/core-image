@@ -18,7 +18,8 @@ jobs:
       - name: Generate package diff
         run: |
           PACKAGE_LIST=$(.github/gen_package_list.sh)
-          apt-get install -y curl
+          apt install -f -y
+          apt install -y curl
           IMAGE_DIGEST=$(curl -s -L -H "Accept: application/vnd.github+json" \
           -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
           -H "X-GitHub-Api-Version: 2022-11-28" \
