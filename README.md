@@ -1,13 +1,15 @@
 # Vanilla OS Core Image
 
-Containerfile for building a vanilla OS Core image.
+Containerfile for building a Vanilla OS Core image.
 
+> [!IMPORTANT]
 > This image is not intended to be used directly. It is used as a base image for other images.
-> Like the Vanilla OS Desktop or the KDE Edition.
+> Like the Vanilla OS Desktop image, etc.
 
 ## Build
 
-You need the [Vib](https://github.com/vanilla-os/Vib) tool to generate the Containerfile.
+> [!NOTE]
+> The fsguard compiled plugin `.so` file should be downloaded from the [latest release](https://github.com/Vanilla-OS/vib-fsguard/releases/latest) and be placed under a `plugins` directory beside the `recipe.yml` file.
 
 ```bash
 vib build recipe.yml
