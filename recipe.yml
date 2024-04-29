@@ -1,5 +1,5 @@
 name: Vanilla Core
-id: vanilla-core
+id: core
 
 stages:
 - id: build
