@@ -13,10 +13,10 @@ modules:
   type: shell
   source:
     type: tar
-    url: https://github.com/89luca89/distrobox/archive/refs/tags/1.7.0.1.tar.gz
+    url: https://github.com/89luca89/distrobox/archive/refs/tags/1.7.2.0.tar.gz
   commands:
   - mkdir -p /usr/share/apx
-  - cp -r /sources/distrobox-1.7.0.1 /usr/share/apx/distrobox
+  - cp -r /sources/distrobox-1.7.2.0 /usr/share/apx/distrobox
   - chmod +x /usr/share/apx/distrobox/distrobox*
   - sed -E -i 's/.*printf "distrobox.*/echo apx \$(echo ${container_name} | sed "s|apx-||") enter/g' /usr/share/apx/distrobox/distrobox-create
 - name: apx-manpage
