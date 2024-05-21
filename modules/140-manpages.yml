@@ -4,3 +4,4 @@ source:
   packages:
   - manpages
   - manpages-posix
+  - apt-doc
