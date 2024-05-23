@@ -9,9 +9,6 @@ commands:
   - mkdir -p /usr/bin
   - cp /sources/abrootv2 /usr/bin/abroot
   - chmod +x /usr/bin/abroot
-  - dpkg-divert --add --rename --divert /usr/bin/crun.original /usr/bin/crun
-  - wget https://github.com/containers/crun/releases/download/1.14.4/crun-1.14.4-linux-amd64 -O /usr/bin/crun
-  - chmod +x /usr/bin/crun
 modules:
 - name: abroot-manpage
   type: shell
