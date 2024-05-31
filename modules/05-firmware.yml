@@ -1,35 +1,16 @@
-name: divert-originals
-type: shell
-commands:
-  - find /usr/lib/firmware -type f -exec dpkg-divert --add --rename --divert '{}-old' '{}' \;
-modules:
-- name: dependencies
-  type: apt
-  source:
-    packages:
-    - curl
-    - rsync
-- name: install-firmware
-  type: apt
-  source:
-    packages:
-    - firmware-linux
-    - firmware-linux-nonfree
-    - firmware-linux-free
-    - firmware-iwlwifi
-    - firmware-realtek
-    - firmware-atheros
-    - intel-microcode
-    - amd64-microcode
-    - b43-fwcutter
-    - firmware-b43-installer
-    - firmware-brcm80211
-    - firmware-sof-signed
-- name: firmware-update
-  type: shell
-  commands:
-    - curl -O https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/linux-firmware-20240513.tar.gz
-    - tar xzf linux-firmware-20240513.tar.gz
-    - rsync -avHAX --existing linux-firmware-20240513/ /usr/lib/firmware/
-    - rm linux-firmware-20240513.tar.gz
-    - rm -rf linux-firmware-20240513
+name: input-and-locale
+type: apt
+source:
+  packages:
+  - firmware-linux
+  - firmware-linux-nonfree
+  - firmware-linux-free
+  - firmware-iwlwifi
+  - firmware-realtek
+  - firmware-atheros
+  - intel-microcode
+  - amd64-microcode
+  - b43-fwcutter
+  - firmware-b43-installer
+  - firmware-brcm80211
+  - firmware-sof-signed
