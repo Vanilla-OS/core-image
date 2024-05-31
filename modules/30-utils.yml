@@ -4,10 +4,8 @@ source:
   packages:
   - nano
   - zsync
-  - rsync
   - dialog
   - less
-  - curl
   - tracker
   - bash-completion
   - libnss-myhostname
