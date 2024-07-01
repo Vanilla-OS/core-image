@@ -6,7 +6,7 @@ source:
   url: https://github.com/Vanilla-OS/Ikaros/releases/download/continuous/ikaros.tar.gz
 commands:
 - mkdir -p /usr/bin
-- cp /sources/ikaros /usr/bin/ikaros
+- cp /sources/ikaros/ikaros /usr/bin/ikaros
 - chmod +x /usr/bin/ikaros
 modules:
 - name: lshw
@@ -20,4 +20,4 @@ modules:
     type: tar
     url: https://github.com/Vanilla-OS/Ikaros/releases/download/continuous/ikaros-man.tar.gz
   commands:
-  - mv /sources/man/ikaros.1 /usr/share/man/man1/
+  - mv /sources/ikaros-manpage/man/ikaros.1 /usr/share/man/man1/
