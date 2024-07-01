@@ -7,7 +7,7 @@ source:
 commands:
   - apt install -y podman golang-github-containers-common patch wget
   - mkdir -p /usr/bin
-  - cp /sources/abrootv2 /usr/bin/abroot
+  - cp /sources/abroot/abrootv2 /usr/bin/abroot
   - chmod +x /usr/bin/abroot
 modules:
 - name: abroot-manpage
@@ -16,4 +16,4 @@ modules:
     type: tar
     url: https://github.com/Vanilla-OS/ABRoot/releases/download/continuous/abroot-man.tar.gz
   commands:
-  - mv /sources/man/man1/abroot.1 /usr/share/man/man1/
+  - mv /sources/abroot-manpage/man/man1/abroot.1 /usr/share/man/man1/

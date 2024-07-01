@@ -6,7 +6,7 @@ source:
   url: https://github.com/Vanilla-OS/apx/releases/download/continuous/apx.tar.gz
 commands:
 - mkdir -p /usr/bin
-- cp /sources/apx /usr/bin/apx
+- cp /sources/apx/apx /usr/bin/apx
 - chmod +x /usr/bin/apx
 modules:
 - name: distrobox
@@ -16,7 +16,7 @@ modules:
     url: https://github.com/89luca89/distrobox/archive/refs/tags/1.7.2.0.tar.gz
   commands:
   - mkdir -p /usr/share/apx
-  - cp -r /sources/distrobox-1.7.2.0 /usr/share/apx/distrobox
+  - cp -r /sources/distrobox/distrobox-1.7.2.0 /usr/share/apx/distrobox
   - chmod +x /usr/share/apx/distrobox/distrobox*
   - sed -E -i 's/.*printf "distrobox.*/echo apx \$(echo ${container_name} | sed "s|apx-||") enter/g' /usr/share/apx/distrobox/distrobox-create
 - name: apx-manpage
@@ -25,4 +25,4 @@ modules:
     type: tar
     url: https://github.com/Vanilla-OS/apx/releases/download/continuous/apx-man.tar.gz
   commands:
-  - mv /sources/man/man1/apx.1 /usr/share/man/man1/
+  - mv /sources/apx-manpage/man/man1/apx.1 /usr/share/man/man1/
