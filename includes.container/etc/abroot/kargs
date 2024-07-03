@@ -1,0 +1,1 @@
+quiet splash bgrt_disable $vt_handoff lsm=integrity
