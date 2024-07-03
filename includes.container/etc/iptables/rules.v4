@@ -1,0 +1,15 @@
+*filter
+:INPUT DROP [0:0]
+:FORWARD DROP [0:0]
+:OUTPUT ACCEPT [0:0]
+
+# Allow loopback
+-A INPUT -i lo -j ACCEPT
+
+# Allow SSH (Port 22)
+# -A INPUT -p tcp --dport 22 -j ACCEPT
+
+# Allow enstabilished and related connections
+-A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+
+COMMIT
