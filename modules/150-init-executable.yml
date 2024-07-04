@@ -1,0 +1,7 @@
+name: init-executable
+type: shell
+commands:
+  - rm /usr/sbin/init
+  - mv /usr/sbin/init.new /usr/sbin/init
+  - chmod +x /usr/sbin/init
+

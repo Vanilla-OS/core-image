@@ -1,0 +1,75 @@
+#!/bin/bash
+
+set -o errexit
+set -o nounset
+
+scriptsPath="/usr/share/init.d"
+nextInit="/lib/systemd/systemd"
+
+log() {
+  local level="$1"
+  local message="$2"
+  echo "[init] ($level): $message"
+  echo "[init] ($level): $message" > /dev/kmsg
+}
+
+failed() {
+  if [[ -x "/usr/bin/plymouth" ]]; then
+    /usr/bin/plymouth --quit || true
+  fi
+
+  dmesg || true
+  echo "Failed to boot"
+  read -p "Press Enter to shut down"
+  poweroff -f
+}
+
+# Run hooks
+run_hooks() {
+  local path="$1"
+
+  if [[ ! -d "$path" ]]; then
+    log "err" "Hooks path $path does not exist or is not a directory"
+    return
+  fi
+
+  hooks=($(find "$path" -type f 2>/dev/null))
+
+  if [[ ${#hooks[@]} -eq 0 ]]; then
+    log "warn" "No hooks found in $path"
+    return
+  fi
+
+  for i in "${!hooks[@]}"; do
+    hook="${hooks[$i]}"
+    if [[ -x "$hook" ]]; then
+      log "info" "[$((i+1))/${#hooks[@]}] Running hook: $hook"
+
+      set +o errexit
+      "$hook"
+      hook_exit="$?"
+      set -o errexit
+
+      if [[ "$hook_exit" -ne 0 ]]; then
+        log "err" "Error running hook: $hook"
+        failed
+      else
+        log "info" "Successfully ran hook: $hook"
+      fi
+    else
+      log "err" "Hook is not executable: $hook"
+      failed
+    fi
+  done
+}
+
+# Execute next init
+exec_next_init() {
+  local init_path="$1"
+  log "info" "Executing next init: $init_path"
+  exec "$init_path"
+}
+
+# Main execution
+run_hooks "$scriptsPath"
+exec_next_init "$nextInit"
