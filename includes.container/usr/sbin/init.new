@@ -33,7 +33,7 @@ run_hooks() {
     return
   fi
 
-  hooks=($(find "$path" -type f 2>/dev/null))
+  hooks=($(find "$path" -type f 2>/dev/null | sort))
 
   if [[ ${#hooks[@]} -eq 0 ]]; then
     log "warn" "No hooks found in $path"
