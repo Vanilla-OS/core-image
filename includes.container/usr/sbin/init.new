@@ -46,7 +46,7 @@ run_hooks() {
       log "info" "[$((i+1))/${#hooks[@]}] Running hook: $hook"
 
       set +o errexit
-      "$hook"
+      "$hook" 2> /dev/kmsg
       hook_exit="$?"
       set -o errexit
 
