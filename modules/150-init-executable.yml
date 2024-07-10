@@ -4,5 +4,5 @@ commands:
   - rm /usr/sbin/init
   - mv /usr/sbin/init.new /usr/sbin/init
   - chmod +x /usr/sbin/init
-  - chmod +x /usr/share/init.d/050-mount-tmp.sh
+  - chmod +x /usr/share/init.d/*
 
