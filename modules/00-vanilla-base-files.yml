@@ -14,3 +14,4 @@ modules:
     packages:
     - dpkg-dev
     - build-essential
+    - debhelper
