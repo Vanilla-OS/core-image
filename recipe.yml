@@ -67,7 +67,7 @@ stages:
   - name: cleanup1
     type: shell
     commands:
-    - apt remove -y linux-image-rt-amd64 linux-image-6.8.9-rt-amd64
+    - apt remove -y linux-image-rt-amd64 linux-image-6.9.8-rt-amd64
     - apt remove -y dpkg-dev build-essential
     - apt autoremove -y
     - apt clean
