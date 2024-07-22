@@ -2,8 +2,7 @@ name: apx
 type: shell
 source:
   type: tar
-  # switch to production build once in production
-  url: https://github.com/Vanilla-OS/apx/releases/download/continuous/apx.tar.gz
+  url: https://github.com/Vanilla-OS/apx/releases/download/v2.4.3/apx.tar.gz
 commands:
 - mkdir -p /usr/bin
 - cp /sources/apx/apx /usr/bin/apx
@@ -23,6 +22,6 @@ modules:
   type: shell
   source:
     type: tar
-    url: https://github.com/Vanilla-OS/apx/releases/download/continuous/apx-man.tar.gz
+    url: https://github.com/Vanilla-OS/apx/releases/download/v2.4.3/apx-man.tar.gz
   commands:
   - mv /sources/apx-manpage/man/man1/apx.1 /usr/share/man/man1/
