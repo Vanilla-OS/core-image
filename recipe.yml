@@ -72,6 +72,11 @@ stages:
     - apt autoremove -y
     - apt clean
 
+  - name: polkit-remember-auth
+    type: shell
+    commands:
+    - sed -ie 's/auth_admin/auth_admin_keep/' /usr/share/polkit-1/actions/org.freedesktop.policykit.policy
+
   - name: fsguard
     type: fsguard
     FsGuardLocation: "/usr/sbin/FsGuard"
