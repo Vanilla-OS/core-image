@@ -3,6 +3,7 @@ type: shell
 source:
   type: tar
   url: https://github.com/Vanilla-OS/apx/releases/download/v2.4.3/apx.tar.gz
+  checksum: 29d1f9d6f7e16e4b584be01d40065f32ba9cb391b3fbd6d507719dbe67405ad3
 commands:
 - mkdir -p /usr/bin
 - cp /sources/apx/apx /usr/bin/apx
@@ -23,5 +24,6 @@ modules:
   source:
     type: tar
     url: https://github.com/Vanilla-OS/apx/releases/download/v2.4.3/apx-man.tar.gz
+    checksum: 10ead801e9cfff7c7a160b104b577fe1ce88e61f6bf45417f3bb3882b861b3ce
   commands:
   - mv /sources/apx-manpage/man/man1/apx.1 /usr/share/man/man1/
