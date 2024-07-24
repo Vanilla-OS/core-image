@@ -1,12 +1,12 @@
 name: base-files
-type: dpkg-buildpackage
+type: shell
 source:
-  type: git
-  url: https://github.com/Vanilla-OS/base-files.git
-  branch: main
-  commit: latest
-  paths:
-  - base-files
+  type: file
+  url: https://github.com/Vanilla-OS/base-files/releases/download/v1.0.0/base-files.deb
+  checksum: f7235c903242c5c8aa5a584c748700da869481e2ea3de6a3a67dfa92c1f25f5d
+commands:
+  - dpkg -i /sources/base-files/base-files.deb
+  - apt -y install -f
 modules:
 - name: base-files-deps-install
   type: apt
