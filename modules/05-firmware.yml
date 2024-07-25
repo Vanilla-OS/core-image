@@ -1,16 +1,35 @@
-name: input-and-locale
-type: apt
-source:
-  packages:
-  - firmware-linux
-  - firmware-linux-nonfree
-  - firmware-linux-free
-  - firmware-iwlwifi
-  - firmware-realtek
-  - firmware-atheros
-  - intel-microcode
-  - amd64-microcode
-  - b43-fwcutter
-  - firmware-b43-installer
-  - firmware-brcm80211
-  - firmware-sof-signed
+name: firmware
+type: shell
+commands:
+  - mkdir -p /var/tmp/firmware-packages
+  - wget -P /var/tmp/firmware-packages http://ftp.de.debian.org/debian/pool/non-free-firmware/f/firmware-nonfree/firmware-linux_20240610-1_all.deb
+  - wget -P /var/tmp/firmware-packages http://ftp.de.debian.org/debian/pool/non-free-firmware/f/firmware-nonfree/firmware-linux-nonfree_20240610-1_all.deb
+  - wget -P /var/tmp/firmware-packages http://ftp.de.debian.org/debian/pool/non-free-firmware/f/firmware-nonfree/firmware-misc-nonfree_20240610-1_all.deb
+  - wget -P /var/tmp/firmware-packages http://ftp.de.debian.org/debian/pool/main/f/firmware-free/firmware-linux-free_20240610-1_all.deb
+  - wget -P /var/tmp/firmware-packages http://ftp.de.debian.org/debian/pool/non-free-firmware/f/firmware-nonfree/firmware-iwlwifi_20240610-1_all.deb
+  - wget -P /var/tmp/firmware-packages http://ftp.de.debian.org/debian/pool/non-free-firmware/f/firmware-nonfree/firmware-realtek_20240610-1_all.deb
+  - wget -P /var/tmp/firmware-packages http://ftp.de.debian.org/debian/pool/non-free-firmware/f/firmware-nonfree/firmware-atheros_20240610-1_all.deb
+  - wget -P /var/tmp/firmware-packages http://ftp.de.debian.org/debian/pool/non-free-firmware/i/intel-microcode/intel-microcode_3.20240531.1+nmu1_amd64.deb
+  - wget -P /var/tmp/firmware-packages http://ftp.de.debian.org/debian/pool/non-free-firmware/a/amd64-microcode/amd64-microcode_3.20240116.2+nmu1_amd64.deb
+  - wget -P /var/tmp/firmware-packages http://ftp.de.debian.org/debian/pool/contrib/b/b43-fwcutter/b43-fwcutter_019-12_amd64.deb
+  - wget -P /var/tmp/firmware-packages http://ftp.de.debian.org/debian/pool/contrib/b/b43-fwcutter/firmware-b43-installer_019-12_all.deb
+  - wget -P /var/tmp/firmware-packages http://ftp.de.debian.org/debian/pool/non-free-firmware/f/firmware-nonfree/firmware-brcm80211_20240610-1_all.deb
+  - wget -P /var/tmp/firmware-packages http://ftp.de.debian.org/debian/pool/non-free-firmware/f/firmware-sof/firmware-sof-signed_2023.12.1-1.1_all.deb
+  - wget -P /var/tmp/firmware-packages http://ftp.de.debian.org/debian/pool/non-free-firmware/f/firmware-nonfree/firmware-amd-graphics_20240610-1_all.deb
+  - '[ "$(sha256sum /var/tmp/firmware-packages/firmware-linux_20240610-1_all.deb           | cut --delimiter " " --fields 1)" = "ab2c0a2ce13d77c87af4703d934b93ed6868ad76ce18cb260525e898ad61e13a" ]'
+  - '[ "$(sha256sum /var/tmp/firmware-packages/firmware-linux-nonfree_20240610-1_all.deb   | cut --delimiter " " --fields 1)" = "33a2178f856fa264b0f6b07ef89ba721c1de45382e289a86ca62ca61013d6d60" ]'
+  - '[ "$(sha256sum /var/tmp/firmware-packages/firmware-misc-nonfree_20240610-1_all.deb    | cut --delimiter " " --fields 1)" = "d7fed1404f1eaf53381fd48ce388846083fa328af62cadc77ab781e34cd22ab1" ]'
+  - '[ "$(sha256sum /var/tmp/firmware-packages/firmware-linux-free_20240610-1_all.deb      | cut --delimiter " " --fields 1)" = "24a6a067a1feecf4357bd59912eae7813b5108813af14581afb6725ecc08e810" ]'
+  - '[ "$(sha256sum /var/tmp/firmware-packages/firmware-iwlwifi_20240610-1_all.deb         | cut --delimiter " " --fields 1)" = "e885048fd0e47e09165675fd620d121e5d97ea44c0d2c739e9154dd90f79a7e6" ]'
+  - '[ "$(sha256sum /var/tmp/firmware-packages/firmware-realtek_20240610-1_all.deb         | cut --delimiter " " --fields 1)" = "db35033b9c6519ddc13828685e2a284c5c93e8a3ac3c3c3757c89739bc0f3517" ]'
+  - '[ "$(sha256sum /var/tmp/firmware-packages/firmware-atheros_20240610-1_all.deb         | cut --delimiter " " --fields 1)" = "716403c9b32322c24aca4e6af733aa498208a9550ca87ad2999dc2d6d10de5fd" ]'
+  - '[ "$(sha256sum /var/tmp/firmware-packages/intel-microcode_3.20240531.1+nmu1_amd64.deb | cut --delimiter " " --fields 1)" = "753035ebcc0c75aa11fca5ad3bff57f40f968d6889d1bd04f539df4393565db8" ]'
+  - '[ "$(sha256sum /var/tmp/firmware-packages/amd64-microcode_3.20240116.2+nmu1_amd64.deb | cut --delimiter " " --fields 1)" = "c3cdde152404e4441200368b1db935ec8916c9d669034b013b9fbc6aad3cbabf" ]'
+  - '[ "$(sha256sum /var/tmp/firmware-packages/b43-fwcutter_019-12_amd64.deb               | cut --delimiter " " --fields 1)" = "2182d1c1ba60d6ce8723a370575d47d4d0e555dc0883a7a088712d457761b5c2" ]'
+  - '[ "$(sha256sum /var/tmp/firmware-packages/firmware-b43-installer_019-12_all.deb       | cut --delimiter " " --fields 1)" = "c207c2250019fd23c244974fab44bb1e21268af327835088c5bd06d08e13d890" ]'
+  - '[ "$(sha256sum /var/tmp/firmware-packages/firmware-brcm80211_20240610-1_all.deb       | cut --delimiter " " --fields 1)" = "fa7ffb51002d0b64d2adda9ed015859a527d5a7af286c36ef23971ad9679050d" ]'
+  - '[ "$(sha256sum /var/tmp/firmware-packages/firmware-sof-signed_2023.12.1-1.1_all.deb   | cut --delimiter " " --fields 1)" = "f43d3d4c41b8c084c1de1b5e82498a2b5bd7a73fcfb6d8c32714e2012f1280b2" ]'
+  - '[ "$(sha256sum /var/tmp/firmware-packages/firmware-amd-graphics_20240610-1_all.deb    | cut --delimiter " " --fields 1)" = "7080bde20034c5a3d8a4badb4183219d5cc82b39e1fbf14edf509da1ef0220e0" ]'
+  - apt-get install -y /var/tmp/firmware-packages/*
+  - apt-mark hold firmware-linux firmware-linux-nonfree firmware-misc-nonfree firmware-linux-free firmware-iwlwifi firmware-realtek firmware-atheros intel-microcode amd64-microcode b43-fwcutter firmware-b43-installer firmware-brcm80211 firmware-sof-signed firmware-amd-graphics
+  - rm -r /var/tmp/firmware-packages
