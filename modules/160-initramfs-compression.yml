@@ -1,0 +1,4 @@
+name: initramfs-compression
+type: shell
+commands:
+  - sed -i 's/COMPRESS=zstd/COMPRESS=gzip/' /etc/initramfs-tools/initramfs.conf

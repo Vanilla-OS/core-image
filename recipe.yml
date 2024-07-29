@@ -46,6 +46,7 @@ stages:
       - modules/130-kernel.yml
       - modules/140-manpages.yml
       - modules/150-init-executable.yml
+      - modules/160-initramfs-compression.yml
       - modules/998-podman-registry.yml
       - modules/999-replace-locale-gen.yml
       - modules/999-remove-grub-files.yml
