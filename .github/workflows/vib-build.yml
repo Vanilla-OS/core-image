@@ -3,7 +3,7 @@ name: Vib Build
 on:
   push:
     branches:
-      - 'main'
+      - 'dev'
     tags:
       - '*'
   workflow_dispatch:
@@ -19,7 +19,7 @@ jobs:
     steps:
     - name: Verify Base Image Integrity
       run:
-        gh attestation verify oci://ghcr.io/vanilla-os/pico:main --owner Vanilla-OS
+        gh attestation verify oci://ghcr.io/vanilla-os/pico:dev --owner Vanilla-OS
       env:
         GH_TOKEN: ${{ github.token }}
 
