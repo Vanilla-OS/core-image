@@ -35,6 +35,11 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Change tag in recipe.
+        if: ${{ github.ref_type == 'tag' }}
+        run: |
+          sed 's/ghcr.io\/vanilla-os\/pico:dev/ghcr.io\/vanilla-os\/pico:main/' -i recipe.yml
+
       - uses: vanilla-os/vib-gh-action@v0.7.4
         with:
             recipe: 'recipe.yml'

@@ -18,14 +18,34 @@ jobs:
 
     steps:
     - name: Verify Base Image Integrity
+      if: ${{ github.ref_type == 'tag' }}
       run:
         gh attestation verify oci://ghcr.io/vanilla-os/pico:dev --owner Vanilla-OS
       env:
         GH_TOKEN: ${{ github.token }}
 
+  check_base_status:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Clone base image. 
+      if: ${{ github.ref_type == 'tag' }}
+      uses: actions/checkout@v4
+      with:
+        repository: Vanilla-OS/pico-image
+
+    - name: Check if base is up to date.
+      if: ${{ github.ref_type == 'tag' }}
+      run: |
+        git fetch origin
+        main_head=$( git rev-parse origin/main )
+        dev_head=$( git rev-parse origin/dev )
+        echo main branch is at: $main_head
+        echo dev branch is at: $dev_head
+        [ "$main_head" = "$dev_head" ]
+
   build:
     runs-on: ubuntu-latest
-    needs: verify-image
+    needs: [verify-image, check_base_status]
     permissions:
       contents: write # Allow actions to create release
       packages: write # Allow pushing images to GHCR
@@ -34,6 +54,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+
+    - name: Change tag in recipe.
+      if: ${{ github.ref_type == 'tag' }}
+      run: |
+        sed 's/ghcr.io\/vanilla-os\/pico:dev/ghcr.io\/vanilla-os\/pico:main/' -i recipe.yml
 
     - uses: vanilla-os/vib-gh-action@v0.7.4
       with:
@@ -51,6 +76,15 @@ jobs:
         echo "REPO_OWNER_LOWERCASE=$REPO_OWNER_LOWERCASE" >> "$GITHUB_ENV"
         echo "IMAGE_URL=ghcr.io/$REPO_OWNER_LOWERCASE/core" >> "$GITHUB_ENV"
 
+    - name: Extra image tag branch
+      if: ${{ github.ref_type != 'tag' }}
+      run: |
+        echo "EXTRA_TAG=ref,event=branch" >> "$GITHUB_ENV"
+    - name: Extra image tag release
+      if: ${{ github.ref_type == 'tag' }}
+      run: |
+        echo "EXTRA_TAG=raw,main" >> "$GITHUB_ENV"
+
     - name: Docker meta
       id: docker_meta
       uses: docker/metadata-action@v5
@@ -62,7 +96,7 @@ jobs:
           type=semver,pattern={{major}}.{{minor}}
           type=semver,pattern={{raw}}
           type=semver,pattern=v{{major}}
-          type=ref,event=branch
+          type=${{ env.EXTRA_TAG }}
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v3
