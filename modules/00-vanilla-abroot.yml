@@ -18,3 +18,8 @@ modules:
     checksum: 201d2024b2d3ab1c0041324b926696744579fb1582e9cf99ba46881f34c17e13
   commands:
   - mv /sources/abroot-manpage/man/man1/abroot.1 /usr/share/man/man1/
+- name: abroot-deps
+  type: apt
+  source:
+    packages:
+      - netavark
