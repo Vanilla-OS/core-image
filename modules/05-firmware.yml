@@ -1,4 +1,4 @@
-name: input-and-locale
+name: firmware
 type: apt
 source:
   packages:
