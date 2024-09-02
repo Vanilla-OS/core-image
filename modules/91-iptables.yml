@@ -1,4 +1,10 @@
-name: enable-iptables-systemd-unit
-type: shell
-commands:
-  - ln -s /usr/lib/systemd/system/iptables.service /etc/systemd/system/multi-user.target.wants/iptables.service
+name: iptables
+type: apt
+source:
+  packages:
+  - iptables
+modules:
+  - name: enable-iptables-systemd-unit
+    type: shell
+    commands:
+      - ln -s /usr/lib/systemd/system/iptables.service /etc/systemd/system/multi-user.target.wants/iptables.service
