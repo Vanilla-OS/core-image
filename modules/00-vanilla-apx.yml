@@ -2,8 +2,8 @@ name: apx
 type: shell
 source:
   type: tar
-  url: https://github.com/Vanilla-OS/apx/releases/download/v2.4.3/apx.tar.gz
-  checksum: 29d1f9d6f7e16e4b584be01d40065f32ba9cb391b3fbd6d507719dbe67405ad3
+  url: https://github.com/Vanilla-OS/apx/releases/download/v2.4.4/apx.tar.gz
+  checksum: 4b56b253fdb70815ce2407faa0aa22a0ae5ab02a389cb5934b0947c3a767ef45
 commands:
 - mkdir -p /usr/bin
 - cp /sources/apx/apx /usr/bin/apx
@@ -13,17 +13,18 @@ modules:
   type: shell
   source:
     type: tar
-    url: https://github.com/89luca89/distrobox/archive/refs/tags/1.7.2.1.tar.gz
+    url: https://github.com/89luca89/distrobox/archive/refs/tags/1.8.0.tar.gz
+    checksum: 72d8d825b6aad63e03e0b92376e6ead9c053c1e676acab3c7eaac9be2929d0a2
   commands:
   - mkdir -p /usr/share/apx
-  - cp -r /sources/distrobox/distrobox-1.7.2.1 /usr/share/apx/distrobox
+  - cp -r /sources/distrobox/distrobox-1.8.0 /usr/share/apx/distrobox
   - chmod +x /usr/share/apx/distrobox/distrobox*
   - sed -E -i 's/.*printf "distrobox.*/echo apx \$(echo ${container_name} | sed "s|apx-||") enter/g' /usr/share/apx/distrobox/distrobox-create
 - name: apx-manpage
   type: shell
   source:
     type: tar
-    url: https://github.com/Vanilla-OS/apx/releases/download/v2.4.3/apx-man.tar.gz
-    checksum: 10ead801e9cfff7c7a160b104b577fe1ce88e61f6bf45417f3bb3882b861b3ce
+    url: https://github.com/Vanilla-OS/apx/releases/download/v2.4.4/apx-man.tar.gz
+    checksum: caa70a0d592e8387cf8e189f9dc1ea2946ac9a44fd5a06747220b75666e81e27
   commands:
   - mv /sources/apx-manpage/man/man1/apx.1 /usr/share/man/man1/
