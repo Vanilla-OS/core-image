@@ -28,6 +28,7 @@ stages:
       - modules/00-vanilla-base-files.yml
       - modules/00-vanilla-apx.yml
       - modules/00-vanilla-apx-stacks.yml
+      - modules/01-kernel.yml
       - modules/03-fswarn.yml
       - modules/05-firmware.yml
       - modules/10-input-and-locale.yml
@@ -43,7 +44,6 @@ stages:
       - modules/100-modules.yml
       - modules/110-fwupd.yml
       - modules/120-fingerprint.yml
-      - modules/130-kernel.yml
       - modules/140-manpages.yml
       - modules/150-init-executable.yml
       - modules/998-podman-registry.yml
@@ -66,7 +66,6 @@ stages:
   - name: cleanup1
     type: shell
     commands:
-    - apt remove -y linux-image-rt-amd64 linux-image-6.10.9-rt-amd64
     - apt remove -y dpkg-dev build-essential
     - apt autoremove -y
     - apt clean
