@@ -35,6 +35,7 @@ stages:
       - modules/20-ssh.yml
       - modules/30-utils.yml
       - modules/40-essentials.yml
+      - modules/41-move-boot-scripts.yml
       - modules/50-fs.yml
       - modules/60-sound.yml
       - modules/70-compression.yml

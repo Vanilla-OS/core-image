@@ -1,0 +1,11 @@
+name: move-boot-scripts
+type: shell
+commands:
+  - mkdir -p /usr/libexec/
+  - mv /usr/sbin/grub-mkconfig /usr/libexec/
+  - mv /usr/sbin/grub-mkconfig-replacement /usr/sbin/grub-mkconfig
+  - chmod +x /usr/sbin/grub-mkconfig
+  - mv /usr/sbin/update-grub /usr/libexec/
+  - mv /usr/sbin/update-grub-replacement /usr/sbin/update-grub
+  - chmod +x /usr/sbin/update-grub
+  
