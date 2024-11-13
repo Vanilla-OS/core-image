@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e
+/usr/libexec/grub-mkconfig "$@"
+# delete this script so users don't accidentally break their system with it
+rm /usr/sbin/grub-mkconfig

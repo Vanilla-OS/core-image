@@ -1,0 +1,3 @@
+#!/bin/bash
+echo please use abroot to update the grub configuration
+exit 1
