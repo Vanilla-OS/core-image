@@ -91,7 +91,7 @@ stages:
   - name: cleanup2
     type: shell
     commands:
-      - rm -rf /etc/sshd/ssh_host_rsa_key
+      - rm /etc/ssh/ssh_host_*key*
       - rm -rf /var/cache/*
       - rm -rf /tmp/*
       - rm -rf /var/tmp/*
