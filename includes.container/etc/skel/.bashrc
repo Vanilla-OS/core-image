@@ -84,9 +84,9 @@ if [ -x /usr/bin/dircolors ]; then
     alias ls='ls --color=auto'
 fi
 
-# extend $PATH to read from ~/.local/bin so the user finds their
-# own binaries
-export PATH="~/.local/bin":$PATH
+# Prepend ~/.local/bin to the PATH in order to give precedence to user-installed
+# executables.
+export PATH="$HOME/.local/bin:$PATH"
 
 # !!! LOOKING FOR CUSTOM ALIASES? !!!
 # You may want to put all your additions into a separate file like
