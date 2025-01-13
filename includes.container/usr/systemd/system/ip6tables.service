@@ -1,0 +1,15 @@
+[Unit]
+Description=ip6tables firewall rules
+DefaultDependencies=no
+Before=network-pre.target
+Wants=network-pre.target
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/ip6tables-restore /etc/iptables/rules.v6
+ExecReload=/sbin/ip6tables-restore /etc/iptables/rules.v6
+ExecStop=/sbin/ip6tables-save > /etc/iptables/rules.v6
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

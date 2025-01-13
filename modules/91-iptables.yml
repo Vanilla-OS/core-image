@@ -8,3 +8,7 @@ modules:
     type: shell
     commands:
       - ln -s /usr/lib/systemd/system/iptables.service /etc/systemd/system/multi-user.target.wants/iptables.service
+  - name: enable-ip6tables-systemd-unit
+    type: shell
+    commands:
+      - ln -s /usr/lib/systemd/system/ip6tables.service /etc/systemd/system/multi-user.target.wants/ip6tables.service
