@@ -1,0 +1,5 @@
+name: kernel-version-file
+type: shell
+commands:
+  - mkdir -p /usr/share/vanilla
+  - echo "$(ls -1 /usr/lib/modules | head -n 1)" > /usr/share/vanilla/kernel-version

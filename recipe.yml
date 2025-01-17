@@ -29,6 +29,7 @@ stages:
       - modules/00-vanilla-apx.yml
       - modules/00-vanilla-apx-stacks.yml
       - modules/01-kernel.yml
+      - modules/02-kernel-version-file.yml
       - modules/03-fswarn.yml
       - modules/05-firmware.yml
       - modules/10-input-and-locale.yml
