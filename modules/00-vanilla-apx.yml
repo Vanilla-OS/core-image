@@ -13,11 +13,11 @@ modules:
   type: shell
   source:
     type: tar
-    url: https://github.com/89luca89/distrobox/archive/refs/tags/1.8.0.tar.gz
-    checksum: 72d8d825b6aad63e03e0b92376e6ead9c053c1e676acab3c7eaac9be2929d0a2
+    url: https://github.com/89luca89/distrobox/archive/refs/tags/1.8.1.2.tar.gz
+    checksum: 3ecbce9b8c5b5df941f986798ffa6ea7fdf742223d42204207974c4323d5b9fc
   commands:
   - mkdir -p /usr/share/apx
-  - cp -r /sources/distrobox/distrobox-1.8.0 /usr/share/apx/distrobox
+  - cp -r /sources/distrobox/distrobox-1.8.1.2 /usr/share/apx/distrobox
   - chmod +x /usr/share/apx/distrobox/distrobox*
   - sed -E -i 's/.*printf "distrobox.*/echo apx \$(echo ${container_name} | sed "s|apx-||") enter/g' /usr/share/apx/distrobox/distrobox-create
 - name: apx-manpage
