@@ -13,7 +13,8 @@ source:
   - modemmanager
   - wpasupplicant
   - wireless-tools
-  - wireguard
+  # removed temporarily to avoid changing kernel version 
+  # - wireguard
   - avahi-autoipd
   - avahi-daemon
   - rfkill
