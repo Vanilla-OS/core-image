@@ -1,4 +1,4 @@
 name: replace-locale-gen
 type: shell
 commands:
-- mv /usr/sbin/locale-gen-replacement /usr/sbin/locale-gen
+  - mv /usr/sbin/locale-gen-replacement /usr/sbin/locale-gen

@@ -69,14 +69,14 @@ stages:
   - name: cleanup1
     type: shell
     commands:
-    - apt remove -y dpkg-dev build-essential
-    - apt autoremove -y
-    - apt clean
+      - apt remove -y dpkg-dev build-essential
+      - apt autoremove -y
+      - apt clean
 
   - name: polkit-remember-auth
     type: shell
     commands:
-    - sed -ie 's/auth_admin/auth_admin_keep/' /usr/share/polkit-1/actions/org.freedesktop.policykit.policy
+      - sed -ie 's/auth_admin/auth_admin_keep/' /usr/share/polkit-1/actions/org.freedesktop.policykit.policy
 
   - name: fsguard
     type: fsguard

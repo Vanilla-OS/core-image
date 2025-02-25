@@ -1,9 +1,9 @@
 name: apx
 type: shell
-source:
-  type: tar
-  url: https://github.com/Vanilla-OS/apx/releases/download/v2.4.4/apx.tar.gz
-  checksum: 4b56b253fdb70815ce2407faa0aa22a0ae5ab02a389cb5934b0947c3a767ef45
+sources:
+  - type: tar
+    url: https://github.com/Vanilla-OS/apx/releases/download/v2.4.4/apx.tar.gz
+    checksum: 4b56b253fdb70815ce2407faa0aa22a0ae5ab02a389cb5934b0947c3a767ef45
 commands:
 - mkdir -p /usr/bin
 - cp /sources/apx/apx /usr/bin/apx
@@ -11,10 +11,10 @@ commands:
 modules:
 - name: distrobox
   type: shell
-  source:
-    type: tar
-    url: https://github.com/89luca89/distrobox/archive/refs/tags/1.8.1.2.tar.gz
-    checksum: 3ecbce9b8c5b5df941f986798ffa6ea7fdf742223d42204207974c4323d5b9fc
+  sources:
+    - type: tar
+      url: https://github.com/89luca89/distrobox/archive/refs/tags/1.8.1.2.tar.gz
+      checksum: 3ecbce9b8c5b5df941f986798ffa6ea7fdf742223d42204207974c4323d5b9fc
   commands:
   - mkdir -p /usr/share/apx
   - cp -r /sources/distrobox/distrobox-1.8.1.2 /usr/share/apx/distrobox
@@ -22,9 +22,9 @@ modules:
   - sed -E -i 's/.*printf "distrobox.*/echo apx \$(echo ${container_name} | sed "s|apx-||") enter/g' /usr/share/apx/distrobox/distrobox-create
 - name: apx-manpage
   type: shell
-  source:
-    type: tar
-    url: https://github.com/Vanilla-OS/apx/releases/download/v2.4.4/apx-man.tar.gz
-    checksum: caa70a0d592e8387cf8e189f9dc1ea2946ac9a44fd5a06747220b75666e81e27
+  sources:
+    - type: tar
+      url: https://github.com/Vanilla-OS/apx/releases/download/v2.4.4/apx-man.tar.gz
+      checksum: caa70a0d592e8387cf8e189f9dc1ea2946ac9a44fd5a06747220b75666e81e27
   commands:
   - mv /sources/apx-manpage/man/man1/apx.1 /usr/share/man/man1/
