@@ -1,9 +1,9 @@
 name: input-and-locale
 type: apt
-source:
-  packages:
-  - locales
-  - kmod
-  - xkb-data
-  - im-config
-  - console-setup
+sources:
+  - packages:
+    - locales
+    - kmod
+    - xkb-data
+    - im-config
+    - console-setup

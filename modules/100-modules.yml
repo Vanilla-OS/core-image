@@ -1,11 +1,11 @@
 name: modules
 type: apt
-source:
-  packages:
-  - dkms
-  - bolt
-  - inputattach
-  - iucode-tool
-  - cryptsetup-initramfs
-  - acpi-call-dkms
-  - libsasl2-modules
+sources:
+  - packages:
+    - dkms
+    - bolt
+    - inputattach
+    - iucode-tool
+    - cryptsetup-initramfs
+    - acpi-call-dkms
+    - libsasl2-modules

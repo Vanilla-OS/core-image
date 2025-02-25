@@ -1,13 +1,13 @@
 name: utils
 type: apt
-source:
-  packages:
-  - nano
-  - zsync
-  - rsync
-  - dialog
-  - less
-  - curl
-  - tracker
-  - bash-completion
-  - libnss-myhostname
+sources:
+  - packages:
+    - nano
+    - zsync
+    - rsync
+    - dialog
+    - less
+    - curl
+    - tracker
+    - bash-completion
+    - libnss-myhostname

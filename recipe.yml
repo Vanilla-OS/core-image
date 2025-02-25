@@ -1,5 +1,6 @@
 name: Vanilla Core
 id: core
+vibversion: 1.0.0
 
 stages:
 - id: build
@@ -59,11 +60,11 @@ stages:
 
   - name: fsguard-runtime-deps
     type: apt
-    source:
-      packages:
-        - "minisign"
-        - "squashfs-tools"
-        - "python3"
+    sources:
+      -  packages:
+          - "minisign"
+          - "squashfs-tools"
+          - "python3"
 
   - name: cleanup1
     type: shell
@@ -85,9 +86,9 @@ stages:
     modules:
       - name: minisign
         type: apt
-        source:
-          packages:
-            - "minisign"
+        sources:
+          -  packages:
+              - "minisign"
 
   - name: cleanup2
     type: shell

@@ -10,8 +10,8 @@ commands:
 modules:
 - name: base-files-deps-install
   type: apt
-  source:
-    packages:
-    - dpkg-dev
-    - build-essential
-    - debhelper
+  sources:
+    - packages:
+      - dpkg-dev
+      - build-essential
+      - debhelper
