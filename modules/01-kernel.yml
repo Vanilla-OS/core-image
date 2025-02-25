@@ -2,7 +2,5 @@ name: kernel
 type: apt
 source:
   packages:
-  - linux-image-6.12.9-amd64
-  # removed temporarily to avoid changing kernel version
-  # - linux-image-amd64
-  # - linux-headers-amd64
+  - linux-image-amd64
+  - linux-headers-amd64
