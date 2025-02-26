@@ -7,6 +7,5 @@ source:
   - inputattach
   - iucode-tool
   - cryptsetup-initramfs
-  # remove temporarily due to build error
-  # - acpi-call-dkms
+  - acpi-call-dkms
   - libsasl2-modules
