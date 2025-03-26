@@ -9,5 +9,5 @@ source:
   - ntfs-3g
   - nfs-common
   - gvfs-fuse
-  - libfuse3-3
+  - libfuse3-4
   - lvm2
