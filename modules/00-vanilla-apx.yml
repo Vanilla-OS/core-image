@@ -2,8 +2,8 @@ name: apx
 type: shell
 source:
   type: tar
-  url: https://github.com/Vanilla-OS/apx/releases/download/v2.4.4/apx.tar.gz
-  checksum: 4b56b253fdb70815ce2407faa0aa22a0ae5ab02a389cb5934b0947c3a767ef45
+  url: https://github.com/Vanilla-OS/apx/releases/download/v2.4.5/apx.tar.gz
+  checksum: 2d4b3145d419810f44a0a7eaea335105662ffe907bac645f9c856421684d2ab9
 commands:
 - mkdir -p /usr/bin
 - cp /sources/apx/apx /usr/bin/apx
@@ -24,7 +24,7 @@ modules:
   type: shell
   source:
     type: tar
-    url: https://github.com/Vanilla-OS/apx/releases/download/v2.4.4/apx-man.tar.gz
-    checksum: caa70a0d592e8387cf8e189f9dc1ea2946ac9a44fd5a06747220b75666e81e27
+    url: https://github.com/Vanilla-OS/apx/releases/download/v2.4.5/apx-man.tar.gz
+    checksum: 82b3e7b1280e0fe82f7ea33578eda2aa6c1dd1177064cfc48d48e440b0cfdc3b
   commands:
   - mv /sources/apx-manpage/man/man1/apx.1 /usr/share/man/man1/
