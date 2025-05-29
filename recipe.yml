@@ -90,6 +90,12 @@ stages:
           packages:
             - "minisign"
 
+  - name: disable-services
+    type: shell
+    commands:
+      - rm /etc/systemd/system/smbd.service
+      - rm /etc/systemd/system/nmbd.service
+
   - name: cleanup2
     type: shell
     commands:
