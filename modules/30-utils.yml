@@ -11,3 +11,4 @@ source:
   - tracker
   - bash-completion
   - libnss-myhostname
+  - distrobox
