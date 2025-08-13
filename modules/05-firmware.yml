@@ -1,16 +1,16 @@
 name: firmware
 type: apt
-source:
-  packages:
-  - firmware-linux
-  - firmware-linux-nonfree
-  - firmware-linux-free
-  - firmware-iwlwifi
-  - firmware-realtek
-  - firmware-atheros
-  - intel-microcode
-  - amd64-microcode
-  - b43-fwcutter
-  - firmware-b43-installer
-  - firmware-brcm80211
-  - firmware-sof-signed
+sources:
+  - packages:
+    - firmware-linux
+    - firmware-linux-nonfree
+    - firmware-linux-free
+    - firmware-iwlwifi
+    - firmware-realtek
+    - firmware-atheros
+    - intel-microcode
+    - amd64-microcode
+    - b43-fwcutter
+    - firmware-b43-installer
+    - firmware-brcm80211
+    - firmware-sof-signed

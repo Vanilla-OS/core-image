@@ -1,6 +1,6 @@
 name: fingerprint
 type: apt
-source:
-  packages:
-  - fprintd
-  - libpam-fprintd
+sources:
+  - packages:
+    - fprintd
+    - libpam-fprintd

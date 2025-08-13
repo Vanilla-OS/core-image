@@ -1,26 +1,26 @@
 name: network
 type: apt
-source:
-  packages:
-  - network-manager
-  - network-manager-config-connectivity-debian
-  - network-manager-openvpn
-  - network-manager-fortisslvpn
-  - network-manager-l2tp
-  - network-manager-openconnect
-  - network-manager-ssh
-  - network-manager-vpnc
-  - modemmanager
-  - wpasupplicant
-  - wireless-tools
-  - wireguard
-  - avahi-autoipd
-  - avahi-daemon
-  - rfkill
-  - bluez
-  - bluez-obexd
-  - libspa-0.2-bluetooth
-  - libnss-mdns
-  - libproxy1-plugin-networkmanager
-  - systemd-timesyncd
-  - iputils-ping
+sources:
+  - packages:
+    - network-manager
+    - network-manager-config-connectivity-debian
+    - network-manager-openvpn
+    - network-manager-fortisslvpn
+    - network-manager-l2tp
+    - network-manager-openconnect
+    - network-manager-ssh
+    - network-manager-vpnc
+    - modemmanager
+    - wpasupplicant
+    - wireless-tools
+    - wireguard
+    - avahi-autoipd
+    - avahi-daemon
+    - rfkill
+    - bluez
+    - bluez-obexd
+    - libspa-0.2-bluetooth
+    - libnss-mdns
+    - libproxy1-plugin-networkmanager
+    - systemd-timesyncd
+    - iputils-ping

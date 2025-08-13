@@ -1,25 +1,25 @@
 name: abroot
 type: shell
-source:
-  type: tar
-  url: https://github.com/Vanilla-OS/ABRoot/releases/download/v2.2.0/abrootv2.tar.gz
-  checksum: b87a18e74a19e3cbdfa0ab8631ec9a506daa2da2ba303da320f3d46753de12e7
+sources:
+  - type: tar
+    url: https://github.com/Vanilla-OS/ABRoot/releases/download/v2.2.0/abrootv2.tar.gz
+    checksum: b87a18e74a19e3cbdfa0ab8631ec9a506daa2da2ba303da320f3d46753de12e7
 commands:
   - apt install -y podman golang-github-containers-common patch wget
   - mkdir -p /usr/bin
-  - cp /sources/abroot/abrootv2 /usr/bin/abroot
+  - cp /sources/abroot/abrootv2/abrootv2 /usr/bin/abroot
   - chmod +x /usr/bin/abroot
 modules:
 - name: abroot-manpage
   type: shell
-  source:
-    type: tar
-    url: https://github.com/Vanilla-OS/ABRoot/releases/download/v2.2.0/abroot-man.tar.gz
-    checksum: 572ebd2d9722b5936a003aec86685ed5aeb403efc377b310822bef67a309f2c6
+  sources:
+    - type: tar
+      url: https://github.com/Vanilla-OS/ABRoot/releases/download/v2.2.0/abroot-man.tar.gz
+      checksum: 572ebd2d9722b5936a003aec86685ed5aeb403efc377b310822bef67a309f2c6
   commands:
-  - mv /sources/abroot-manpage/man/man1/abroot.1 /usr/share/man/man1/
+    - mv /sources/abroot-manpage/abroot-man/man/man1/abroot.1 /usr/share/man/man1/
 - name: abroot-deps
   type: apt
-  source:
-    packages:
-      - netavark
+  sources:
+    - packages:
+        - netavark

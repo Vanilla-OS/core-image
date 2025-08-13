@@ -1,27 +1,27 @@
 name: essentials
 type: apt
-source:
-  packages:
-  - setserial
-  - systemd-sysv
-  - user-setup
-  - console-setup
-  - sudo
-  - acpi
-  - polkitd
-  - pkexec
-  - bc
-  - pcmciautils
-  - samba-common-bin
-  - ibus
-  - ibus-table
-  - laptop-detect
-  - efibootmgr
-  - grub-efi-amd64
-  - grub-efi-amd64-bin
-  - grub-efi-amd64-signed
-  - shim-signed
-  - shim-helpers-amd64-signed
-  - uidmap
-  - minisign
-  - zram-tools
+sources:
+  - packages:
+    - setserial
+    - systemd-sysv
+    - user-setup
+    - console-setup
+    - sudo
+    - acpi
+    - polkitd
+    - pkexec
+    - bc
+    - pcmciautils
+    - samba-common-bin
+    - ibus
+    - ibus-table
+    - laptop-detect
+    - efibootmgr
+    - grub-efi-amd64
+    - grub-efi-amd64-bin
+    - grub-efi-amd64-signed
+    - shim-signed
+    - shim-helpers-amd64-signed
+    - uidmap
+    - minisign
+    - zram-tools
