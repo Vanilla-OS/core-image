@@ -1,8 +1,8 @@
 name: iptables
 type: apt
-source:
-  packages:
-  - iptables
+sources:
+  - packages:
+    - iptables
 modules:
   - name: enable-iptables-systemd-unit
     type: shell

@@ -1,7 +1,7 @@
 name: compression
 type: apt
-source:
-  packages:
-  - zstd
-  - zip
-  - unzip
+sources:
+  - packages:
+    - zstd
+    - zip
+    - unzip

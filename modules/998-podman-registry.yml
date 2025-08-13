@@ -3,4 +3,4 @@
 name: podman-rgistry
 type: shell
 commands:
-- echo "unqualified-search-registries=[\"docker.io\"]" >> /etc/containers/registries.conf
+  - echo "unqualified-search-registries=[\"docker.io\"]" >> /etc/containers/registries.conf

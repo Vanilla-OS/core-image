@@ -1,13 +1,13 @@
 name: fs
 type: apt
-source:
-  packages:
-  - exfatprogs
-  - btrfs-progs
-  - dosfstools
-  - gvfs-backends
-  - ntfs-3g
-  - nfs-common
-  - gvfs-fuse
-  - libfuse3-4
-  - lvm2
+sources:
+  - packages:
+    - exfatprogs
+    - btrfs-progs
+    - dosfstools
+    - gvfs-backends
+    - ntfs-3g
+    - nfs-common
+    - gvfs-fuse
+    - libfuse3-4
+    - lvm2

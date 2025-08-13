@@ -1,30 +1,30 @@
 name: apx
 type: shell
-source:
-  type: tar
-  url: https://github.com/Vanilla-OS/apx/releases/download/v2.4.5/apx.tar.gz
-  checksum: 2d4b3145d419810f44a0a7eaea335105662ffe907bac645f9c856421684d2ab9
+sources:
+  - type: tar
+    url: https://github.com/Vanilla-OS/apx/releases/download/v2.4.5/apx.tar.gz
+    checksum: 2d4b3145d419810f44a0a7eaea335105662ffe907bac645f9c856421684d2ab9
 commands:
 - mkdir -p /usr/bin
-- cp /sources/apx/apx /usr/bin/apx
+- cp /sources/apx/apx/apx /usr/bin/apx
 - chmod +x /usr/bin/apx
 modules:
 - name: distrobox
   type: shell
-  source:
-    type: tar
-    url: https://github.com/89luca89/distrobox/archive/refs/tags/1.8.1.2.tar.gz
-    checksum: 3ecbce9b8c5b5df941f986798ffa6ea7fdf742223d42204207974c4323d5b9fc
+  sources:
+    - type: tar
+      url: https://github.com/89luca89/distrobox/archive/refs/tags/1.8.1.2.tar.gz
+      checksum: 3ecbce9b8c5b5df941f986798ffa6ea7fdf742223d42204207974c4323d5b9fc
   commands:
   - mkdir -p /usr/share/apx
-  - cp -r /sources/distrobox/distrobox-1.8.1.2 /usr/share/apx/distrobox
+  - cp -r /sources/distrobox/1.8.1.2/distrobox-1.8.1.2 /usr/share/apx/distrobox
   - chmod +x /usr/share/apx/distrobox/distrobox*
   - sed -E -i 's/.*printf "distrobox.*/echo apx \$(echo ${container_name} | sed "s|apx-||") enter/g' /usr/share/apx/distrobox/distrobox-create
 - name: apx-manpage
   type: shell
-  source:
-    type: tar
-    url: https://github.com/Vanilla-OS/apx/releases/download/v2.4.5/apx-man.tar.gz
-    checksum: 82b3e7b1280e0fe82f7ea33578eda2aa6c1dd1177064cfc48d48e440b0cfdc3b
+  sources:
+    - type: tar
+      url: https://github.com/Vanilla-OS/apx/releases/download/v2.4.5/apx-man.tar.gz
+      checksum: 82b3e7b1280e0fe82f7ea33578eda2aa6c1dd1177064cfc48d48e440b0cfdc3b
   commands:
-  - mv /sources/apx-manpage/man/man1/apx.1 /usr/share/man/man1/
+  - mv /sources/apx-manpage/apx-man/man/man1/apx.1 /usr/share/man/man1/
