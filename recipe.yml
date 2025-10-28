@@ -99,5 +99,4 @@ stages:
       - rm -rf /var/cache/*
       - rm -rf /tmp/*
       - rm -rf /var/tmp/*
-      - rm -rf /sources
       - mkdir -p /var/cache/apt/archives/partial
