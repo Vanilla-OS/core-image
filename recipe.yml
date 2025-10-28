@@ -1,6 +1,6 @@
 name: Vanilla Core
 id: core
-vibversion: 1.0.4
+vibversion: 1.0.6
 
 stages:
 - id: build
