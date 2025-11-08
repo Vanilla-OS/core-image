@@ -17,11 +17,19 @@ sources:
     - ibus-table
     - laptop-detect
     - efibootmgr
-    - grub-efi-amd64
-    - grub-efi-amd64-bin
-    - grub-efi-amd64-signed
     - shim-signed
-    - shim-helpers-amd64-signed
     - uidmap
     - minisign
     - zram-tools
+  - packages:
+    - grub-efi-amd64
+    - grub-efi-amd64-bin
+    - grub-efi-amd64-signed
+    - shim-helpers-amd64-signed
+    only-arches: [amd64]
+  - packages:
+    - grub-efi-arm64
+    - grub-efi-arm64-bin
+    - grub-efi-arm64-signed
+    - shim-helpers-arm64-signed
+    only-arches: [arm64]
