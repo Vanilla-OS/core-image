@@ -4,3 +4,8 @@ sources:
   - packages:
     - linux-image-amd64
     - linux-headers-amd64
+    only-arches: [amd64]
+  - packages:
+    - linux-image-arm64
+    - linux-headers-arm64
+    only-arches: [arm64]

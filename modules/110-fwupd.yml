@@ -3,4 +3,9 @@ type: apt
 sources:
   - packages:
     - fwupd
+  - packages:
     - fwupd-amd64-signed
+    only-arches: [amd64]
+  - packages:
+    - fwupd-arm64-signed
+    only-arches: [arm64]
