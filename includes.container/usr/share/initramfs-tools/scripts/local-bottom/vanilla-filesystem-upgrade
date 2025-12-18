@@ -1,0 +1,24 @@
+#!/bin/sh
+
+PREREQ=""
+
+prereqs()
+{
+	echo "${PREREQ}"
+}
+
+case ${1} in
+	prereqs)
+		prereqs
+		exit 0
+		;;
+esac
+
+mount -o remount,rw ${rootmnt}
+if [ -d ${rootmnt}/.system ]; then
+	echo "vanilla-filesystem-upgrade: Detected old filesystem at /.system, upgrading..."
+	rm -f ${rootmnt}/etc ${rootmnt}/usr
+	mv ${rootmnt}/.system/FsGuard ${rootmnt}/.system/etc ${rootmnt}/.system/sysconf ${rootmnt}/.system/usr ${rootmnt}/.system/bin ${rootmnt}/.system/lib ${rootmnt}/.system/lib64 ${rootmnt}/.system/sbin ${rootmnt}/.system/vanilla.key ${rootmnt}
+	rm -rf ${rootmnt}/.system
+	echo "vanilla-filesystem-upgrade: Filesystem upgrade completed"
+fi

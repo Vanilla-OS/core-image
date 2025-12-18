@@ -1,0 +1,4 @@
+name: 46-filesystem-upgrade
+type: shell
+commands:
+  - chmod +x /usr/share/initramfs-tools/scripts/local-bottom/vanilla-filesystem-upgrade
