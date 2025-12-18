@@ -2,8 +2,8 @@ name: abroot
 type: shell
 sources:
   - type: tar
-    url: https://github.com/Vanilla-OS/ABRoot/releases/download/v2.3.0/abrootv2.tar.gz
-    checksum: e2367c1bc1445842e0358909db22dbcbca973dec37a0e4824219458f23d4b987
+    url: https://github.com/Vanilla-OS/ABRoot/releases/download/v2.4.0/abrootv2.tar.gz
+    checksum: f95834ce8a763053636eb2e6a67abc1e7be69017e903c4289add4ae283ecb0c3
 commands:
   - apt install -y podman golang-github-containers-common patch wget
   - mkdir -p /usr/bin
@@ -14,8 +14,8 @@ modules:
   type: shell
   sources:
     - type: tar
-      url: https://github.com/Vanilla-OS/ABRoot/releases/download/v2.3.0/abroot-man.tar.gz
-      checksum: 2e1a15a294a0a8b45296cd2bc29ed4b2e1ba75ef1007d199bf894e8b9b0ac67c
+      url: https://github.com/Vanilla-OS/ABRoot/releases/download/v2.4.0/abroot-man.tar.gz
+      checksum: dcb21b1182ba1eea66971079287ed18ea4f5012570476889bcd59eb484d3383e
   commands:
     - mv /sources/abroot-manpage/abroot-man/man/man1/abroot.1 /usr/share/man/man1/
 - name: abroot-deps
