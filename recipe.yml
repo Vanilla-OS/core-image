@@ -61,6 +61,11 @@ stages:
     commands:
       - echo -e "ALGO=lz4\nPERCENT=50" >> /etc/default/zramswap
 
+  - name: runroot
+    type: shell
+    commands:
+      - chmod +x /usr/bin/runroot
+
   - name: fsguard-runtime-deps
     type: apt
     sources:
