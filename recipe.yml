@@ -44,7 +44,6 @@ stages:
       - modules/50-fs.yml
       - modules/60-sound.yml
       - modules/70-compression.yml
-      - modules/80-xdg.yml
       - modules/90-network.yml
       - modules/91-iptables.yml
       - modules/100-modules.yml

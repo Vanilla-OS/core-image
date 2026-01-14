@@ -1,7 +1,0 @@
-name: xdg
-type: apt
-sources:
-  - packages:
-    - xdg-utils
-    - xdg-user-dirs
-    - xdg-user-dirs-gtk
