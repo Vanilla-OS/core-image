@@ -3,33 +3,23 @@ type: apt
 sources:
   - packages:
     - setserial
-    - systemd-sysv
     - user-setup
     - console-setup
     - sudo
     - acpi
-    - polkitd
     - pkexec
     - bc
     - pcmciautils
     - samba-common-bin
-    - ibus
-    - ibus-table
     - laptop-detect
     - efibootmgr
     - shim-signed
-    - uidmap
     - minisign
     - zram-tools
+    - grub-efi
   - packages:
-    - grub-efi-amd64
-    - grub-efi-amd64-bin
     - grub-efi-amd64-signed
-    - shim-helpers-amd64-signed
     only-arches: [amd64]
   - packages:
-    - grub-efi-arm64
-    - grub-efi-arm64-bin
     - grub-efi-arm64-signed
-    - shim-helpers-arm64-signed
     only-arches: [arm64]

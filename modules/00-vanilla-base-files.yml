@@ -5,13 +5,4 @@ sources:
     url: https://github.com/Vanilla-OS/base-files/releases/download/v1.0.1/base-files.deb
     checksum: e5a541ad1a85d922475eda2eb2cd8b6620e1aa36698dc99b7a36262435c25df1
 commands:
-  - dpkg -i /sources/base-files/base-files/base-files.deb
-  - apt -y install -f
-modules:
-- name: base-files-deps-install
-  type: apt
-  sources:
-    - packages:
-      - dpkg-dev
-      - build-essential
-      - debhelper
+  - apt install -y /sources/base-files/base-files/base-files.deb

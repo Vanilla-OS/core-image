@@ -10,7 +10,6 @@ sources:
     checksum: 9e3226d1132d94a914a2f478aabe3a9ec7bfa692b88ff30391827888b9927ba1
     only-arches: [arm64]
 commands:
-  - apt install -y podman golang-github-containers-common patch wget
   - mkdir -p /usr/bin
   - cp /sources/abroot/abrootv2*/abrootv2 /usr/bin/abroot
   - chmod +x /usr/bin/abroot
