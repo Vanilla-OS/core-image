@@ -8,7 +8,7 @@ sources:
     - dialog
     - less
     - curl
-    - tracker
+    - tinysparql
     - bash-completion
     - libnss-myhostname
     - distrobox
