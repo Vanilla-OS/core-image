@@ -7,4 +7,3 @@ sources:
     - wireplumber
     - alsa-utils
     - alsa-firmware-loaders
-    - libasound2t64

@@ -3,4 +3,3 @@ type: shell
 commands:
   - chmod +x /usr/share/initramfs-tools/hooks/vanilla-lvm-fix
   - chmod +x /usr/share/initramfs-tools/scripts/init-premount/vanilla-lvm-fix
-  

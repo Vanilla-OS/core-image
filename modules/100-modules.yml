@@ -8,6 +8,3 @@ sources:
     - cryptsetup-initramfs
     - acpi-call-dkms
     - libsasl2-modules
-  - packages:
-    - iucode-tool
-    only-arches: [amd64]

@@ -3,12 +3,9 @@ type: apt
 sources:
   - packages:
     - firmware-linux
-    - firmware-linux-nonfree
-    - firmware-linux-free
     - firmware-iwlwifi
     - firmware-realtek
     - firmware-atheros
-    - b43-fwcutter
     - firmware-b43-installer
     - firmware-brcm80211
     - firmware-sof-signed
