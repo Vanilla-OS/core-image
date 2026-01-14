@@ -3,4 +3,3 @@ type: apt
 sources:
   - packages:
     - openssh-server
-    - spice-vdagent
