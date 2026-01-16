@@ -28,8 +28,6 @@ stages:
     includes:
       - modules/00-vanilla-abroot.yml
       - modules/00-vanilla-base-files.yml
-      - modules/00-vanilla-apx.yml
-      - modules/00-vanilla-apx-stacks.yml
       - modules/01-kernel.yml
       - modules/02-kernel-version-file.yml
       - modules/03-fswarn.yml
@@ -51,6 +49,7 @@ stages:
       - modules/120-fingerprint.yml
       - modules/140-manpages.yml
       - modules/150-init-executable.yml
+      - modules/998-distrobox-symlink.yml
       - modules/998-podman-registry.yml
       - modules/999-replace-locale-gen.yml
       - modules/999-remove-grub-files.yml
