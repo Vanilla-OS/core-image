@@ -3,3 +3,5 @@ type: apt
 sources:
   - packages:
     - openssh-server
+cleanup:
+  - /etc/ssh/ssh_host_*key*

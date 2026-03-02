@@ -9,3 +9,5 @@ sources:
     - linux-image-arm64
     - linux-headers-arm64
     only-arches: [arm64]
+cleanup:
+  - /etc/machine-id

@@ -1,6 +1,6 @@
 name: Vanilla Core
 id: core
-vibversion: 1.0.6
+vibversion: 1.1.0
 
 stages:
 - id: build
@@ -14,6 +14,16 @@ stages:
   runs:
     commands:
       - echo 'APT::Install-Recommends "1";' > /etc/apt/apt.conf.d/01norecommends
+  cleanup:
+    - /boot/initrd.img*
+    - /var/cache/apt/pkgcache.bin
+    - /var/cache/debconf
+    - /var/cache/dictionaries-common
+    - /var/cache/fontconfig
+    - /var/cache/ldconfig
+    - /var/cache/man
+    - /var/lib/dbus/machine-id
+    - /var/log/*
 
   modules:
   - name: mandb
@@ -72,7 +82,7 @@ stages:
           - "squashfs-tools"
           - "python3"
 
-  - name: cleanup1
+  - name: cleanup
     type: shell
     commands:
       - apt remove -y dpkg-dev build-essential
@@ -95,12 +105,3 @@ stages:
         sources:
           - packages:
               - "minisign"
-
-  - name: cleanup2
-    type: shell
-    commands:
-      - rm /etc/ssh/ssh_host_*key*
-      - rm -rf /var/cache/*
-      - rm -rf /tmp/*
-      - rm -rf /var/tmp/*
-      - mkdir -p /var/cache/apt/archives/partial
