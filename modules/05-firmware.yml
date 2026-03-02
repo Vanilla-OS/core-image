@@ -13,3 +13,5 @@ sources:
     - intel-microcode
     - amd64-microcode
     only-arches: [amd64]
+cleanup:
+  - /root/.wget-hsts
