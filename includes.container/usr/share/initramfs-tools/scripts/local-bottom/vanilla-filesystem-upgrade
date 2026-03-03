@@ -22,7 +22,7 @@ if [ -d ${rootmnt}/.system ]; then
 
 	rm -f ${rootmnt}/etc ${rootmnt}/usr ${rootmnt}/bin ${rootmnt}/lib ${rootmnt}/lib64 ${rootmnt}/sbin ${rootmnt}/vanilla.key
 	rm -rf ${rootmnt}/FsGuard ${rootmnt}/sysconf
-	mv ${rootmnt}/.system/FsGuard ${rootmnt}/.system/etc ${rootmnt}/.system/sysconf ${rootmnt}/.system/usr ${rootmnt}/.system/bin ${rootmnt}/.system/lib ${rootmnt}/.system/lib64 ${rootmnt}/.system/sbin ${rootmnt}/.system/vanilla.key ${rootmnt}
+	mv ${rootmnt}/.system/etc ${rootmnt}/.system/sysconf ${rootmnt}/.system/usr ${rootmnt}/.system/bin ${rootmnt}/.system/lib ${rootmnt}/.system/lib64 ${rootmnt}/.system/sbin ${rootmnt}/.system/vanilla.key ${rootmnt}
 	rm -rf ${rootmnt}/.system
 	echo "vanilla-filesystem-upgrade: Filesystem upgrade completed"
 fi
