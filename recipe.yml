@@ -74,14 +74,6 @@ stages:
     commands:
       - chmod +x /usr/bin/runroot
 
-  - name: fsguard-runtime-deps
-    type: apt
-    sources:
-      - packages:
-          - "minisign"
-          - "squashfs-tools"
-          - "python3"
-
   - name: cleanup
     type: shell
     commands:
@@ -93,15 +85,3 @@ stages:
     type: shell
     commands:
       - sed -ie 's/auth_admin/auth_admin_keep/' /usr/share/polkit-1/actions/org.freedesktop.policykit.policy
-
-  - name: fsguard
-    type: fsguard
-    FsGuardLocation: "/usr/sbin/FsGuard"
-    GenerateKey: true
-    FilelistPaths: ["/usr/bin"]
-    modules:
-      - name: minisign
-        type: apt
-        sources:
-          - packages:
-              - "minisign"
