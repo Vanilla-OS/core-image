@@ -2,7 +2,7 @@ name: base-files
 type: shell
 sources:
   - type: file
-    url: https://github.com/Vanilla-OS/base-files/releases/download/v1.0.1/base-files.deb
-    checksum: e5a541ad1a85d922475eda2eb2cd8b6620e1aa36698dc99b7a36262435c25df1
+    url: https://github.com/Vanilla-OS/base-files/releases/download/v1.1.0/base-files.deb
+    checksum: 6c2cd77daa38620dc1afae4f2fc291189bd2e0d349227152bef0a63ebfca158e
 commands:
   - apt install -y /sources/base-files/base-files/base-files.deb
