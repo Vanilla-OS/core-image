@@ -64,11 +64,6 @@ stages:
       - modules/999-replace-locale-gen.yml
       - modules/999-remove-grub-files.yml
 
-  - name: zram-config
-    type: shell
-    commands:
-      - echo -e "ALGO=lz4\nPERCENT=50" >> /etc/default/zramswap
-
   - name: runroot
     type: shell
     commands:
