@@ -1,6 +1,0 @@
-# this module exists to allow legacy apx containers to locate distrobox executables
-name: distrobox-symlink
-type: shell
-commands:
-  - mkdir -p /usr/share/apx/distrobox
-  - ln -s /usr/bin/distrobox-init /usr/bin/distrobox-export /usr/bin/distrobox-host-exec /usr/share/apx/distrobox/
