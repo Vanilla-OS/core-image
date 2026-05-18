@@ -11,4 +11,3 @@ sources:
     - tinysparql
     - bash-completion
     - libnss-myhostname
-    - distrobox

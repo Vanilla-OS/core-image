@@ -45,6 +45,7 @@ stages:
       - modules/10-input-and-locale.yml
       - modules/20-ssh.yml
       - modules/30-utils.yml
+      - modules/31-distrobox.yml
       - modules/40-essentials.yml
       - modules/41-move-boot-scripts.yml
       - modules/45-lvm-fix.yml
@@ -59,7 +60,6 @@ stages:
       - modules/120-fingerprint.yml
       - modules/140-manpages.yml
       - modules/150-init-executable.yml
-      - modules/998-distrobox-symlink.yml
       - modules/998-podman-registry.yml
       - modules/999-replace-locale-gen.yml
       - modules/999-remove-grub-files.yml
@@ -72,7 +72,7 @@ stages:
   - name: cleanup
     type: shell
     commands:
-      - apt remove -y dpkg-dev build-essential
+      - apt remove -y golang-go make dpkg-dev build-essential
       - apt autoremove -y
       - apt clean
 

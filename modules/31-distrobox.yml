@@ -1,0 +1,14 @@
+name: distrobox
+type: make
+sources:
+  - type: git
+    url: https://github.com/89luca89/distrobox.git
+    tag: 2.0.0-rc.2
+modules:
+  - name: distrobox-deps-install
+    type: apt
+    sources:
+      - packages:
+          - golang-go
+          - make
+          - podman
