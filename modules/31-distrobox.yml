@@ -1,5 +1,6 @@
 name: distrobox
 type: make
+installCommand: make PREFIX=/usr install
 sources:
   - type: git
     url: https://github.com/89luca89/distrobox.git
