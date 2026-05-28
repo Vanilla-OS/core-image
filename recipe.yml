@@ -4,7 +4,7 @@ vibversion: 1.1.0
 
 stages:
 - id: build
-  base: ghcr.io/vanilla-os/pico:dev
+  base: ghcr.io/vanilla-os/pico:latest
   addincludes: true
   singlelayer: false
   labels:
