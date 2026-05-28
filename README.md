@@ -18,5 +18,5 @@ podman image build -t vanillaos/core .
 All the image builds/pushes are attested for build provenance and integrity using the [attest-build-provenance`](https://github.com/actions/attest-build-provenance) action. The attestations can be verified [here](https://github.com/Vanilla-OS/core-image/attestations) or by having the latest version of [GitHub CLI](https://github.com/cli/cli/releases/latest) installed in your system. Then, execute the following command:
 
 ```sh
-gh attestation verify oci://ghcr.io/vanilla-os/core:main --owner Vanilla-OS
+gh attestation verify oci://ghcr.io/vanilla-os/core:latest --owner Vanilla-OS
 ```
