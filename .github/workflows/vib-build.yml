@@ -197,7 +197,7 @@ jobs:
     if: github.ref_type == 'tag' && github.repository == 'vanilla-os/core-image'
     needs: merge
     container:
-      image: ghcr.io/vanilla-os/core:main
+      image: ghcr.io/vanilla-os/core:latest
 
     steps:
       - uses: actions/checkout@v7
