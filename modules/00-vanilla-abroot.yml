@@ -2,12 +2,12 @@ name: abroot
 type: shell
 sources:
   - type: tar
-    url: https://github.com/Vanilla-OS/ABRoot/releases/download/v2.5.0/abrootv2-amd64.tar.gz
-    checksum: 6ee0937d17508ba4698bc73f5cff25e654ab7604b1571e435cd954fb3c34c4df
+    url: https://github.com/Vanilla-OS/ABRoot/releases/download/v2.6.0/abrootv2-amd64.tar.gz
+    checksum: aa43f0e9c47f32ddab69764f429a59f20a7525076fa77eecfc949434961de3e8
     only-arches: [amd64]
   - type: tar
-    url: https://github.com/Vanilla-OS/ABRoot/releases/download/v2.5.0/abrootv2-arm64.tar.gz
-    checksum: 9e3226d1132d94a914a2f478aabe3a9ec7bfa692b88ff30391827888b9927ba1
+    url: https://github.com/Vanilla-OS/ABRoot/releases/download/v2.6.0/abrootv2-arm64.tar.gz
+    checksum: 43428b785ce8331ffbc70200730ea8ea7d2a1336cd0df4bba66c0e4a5f0e5393
     only-arches: [arm64]
 commands:
   - mkdir -p /usr/bin
@@ -18,8 +18,8 @@ modules:
   type: shell
   sources:
     - type: tar
-      url: https://github.com/Vanilla-OS/ABRoot/releases/download/v2.5.0/abroot-man.tar.gz
-      checksum: b1aed27d942b899ce38ce6ebfbae19622b4aae7b52c498fb2fa9b414a632984e
+      url: https://github.com/Vanilla-OS/ABRoot/releases/download/v2.6.0/abroot-man.tar.gz
+      checksum: 31b9be5e7b3d4fa8b8991d5e128cb847da2b2300f5c8c1243aa82e4836138d27
   commands:
     - mv /sources/abroot-manpage/abroot-man/man/man1/abroot.1 /usr/share/man/man1/
 - name: abroot-deps
