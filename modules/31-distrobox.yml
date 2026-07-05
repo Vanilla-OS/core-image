@@ -17,6 +17,7 @@ modules:
     type: shell
     commands:
       - mkdir -p /usr/share/apx/distrobox
-      - ln -s /usr/bin/distrobox /usr/share/apx/distrobox/distrobox-export
-      - ln -s /usr/bin/distrobox /usr/share/apx/distrobox/distrobox-host-exec
-      - ln -s /usr/bin/distrobox /usr/share/apx/distrobox/distrobox-init
+      - ln -s /usr/bin/distrobox /usr/share/apx/distrobox/distrobox-enter
+      - ln -s /usr/bin/distrobox-export /usr/share/apx/distrobox/
+      - ln -s /usr/bin/distrobox-host-exec /usr/share/apx/distrobox/
+      - ln -s /usr/bin/distrobox-init /usr/share/apx/distrobox/
