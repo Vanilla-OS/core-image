@@ -38,6 +38,7 @@ stages:
     includes:
       - modules/00-vanilla-abroot.yml
       - modules/00-vanilla-base-files.yml
+      - modules/00-vanilla-continuity.yml
       - modules/01-kernel.yml
       - modules/02-kernel-version-file.yml
       - modules/03-fswarn.yml
