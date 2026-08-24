@@ -9,6 +9,10 @@ sources:
     - firmware-b43-installer
     - firmware-brcm80211
     - firmware-sof-signed
+    - firmware-intel-graphics
+    - firmware-intel-misc
+    - firmware-mediatek
+    - firmware-nvidia-graphics
   - packages:
     - intel-microcode
     - amd64-microcode
