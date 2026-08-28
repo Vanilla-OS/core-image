@@ -1,0 +1,12 @@
+name: libfuse2-compat
+type: shell
+sources:
+  - type: file
+    url: https://github.com/mirkobrombin/libfuse2-compat/releases/download/v0.1.1/libfuse2-compat_0.1.1-1_amd64.deb
+    checksum: f2fcf41dfe427634bf3496f8afa267788ee956f9059327bd1b44dbdd5497f127
+    only-arches: [amd64]
+  - type: file
+    url: https://github.com/mirkobrombin/libfuse2-compat/releases/download/v0.1.1/libfuse2-compat_0.1.1-1_arm64.deb
+    checksum: caf1d626c74d2cc3732ae296e56d550be7b9a017ff00516aab222d5f2956bc2b
+commands:
+  - apt-get install -y /sources/libfuse2-compat/libfuse2-compat/libfuse2-compat*.deb
