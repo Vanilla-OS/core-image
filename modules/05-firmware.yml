@@ -8,7 +8,9 @@ sources:
     - firmware-atheros
     - firmware-b43-installer
     - firmware-brcm80211
+    - firmware-cirrus
     - firmware-sof-signed
+    - firmware-intel-sound
     - firmware-intel-graphics
     - firmware-intel-misc
     - firmware-mediatek
