@@ -47,6 +47,7 @@ stages:
       - modules/20-ssh.yml
       - modules/30-utils.yml
       - modules/31-distrobox.yml
+      - modules/32-libfuse2-compat.yml
       - modules/40-essentials.yml
       - modules/41-move-boot-scripts.yml
       - modules/45-lvm-fix.yml

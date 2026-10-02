@@ -8,5 +8,6 @@ sources:
   - type: file
     url: https://github.com/mirkobrombin/libfuse2-compat/releases/download/v0.1.1/libfuse2-compat_0.1.1-1_arm64.deb
     checksum: caf1d626c74d2cc3732ae296e56d550be7b9a017ff00516aab222d5f2956bc2b
+    only-arches: [arm64]
 commands:
-  - apt-get install -y /sources/libfuse2-compat/libfuse2-compat/libfuse2-compat*.deb
+  - apt-get install -y /sources/libfuse2-compat/libfuse2-compat*/libfuse2-compat.deb
