@@ -40,7 +40,7 @@ jobs:
       packages: write # Allow pushing images to GHCR
 
     steps:
-    - uses: actions/checkout@v7
+    - uses: actions/checkout@v7.0.1
 
     - name: Change tag in recipe.
       if: ${{ github.ref_type != 'tag' }}
@@ -202,7 +202,7 @@ jobs:
       image: ghcr.io/vanilla-os/core:latest
 
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
 
       - name: Generate package diff
         run: |
