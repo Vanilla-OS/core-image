@@ -1,0 +1,4 @@
+name: kernel-system-map
+type: shell
+commands:
+  - 'for vmlinuz in /boot/vmlinuz-*; do touch "/boot/System.map-${vmlinuz##*/vmlinuz-}"; done'
