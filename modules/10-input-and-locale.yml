@@ -3,6 +3,5 @@ type: apt
 sources:
   - packages:
     - locales
-    - ibus-table
     - im-config
     - console-setup
